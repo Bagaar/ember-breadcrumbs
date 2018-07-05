@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "description": "Easy breadcrumb management for Ember applications.",
   "keywords": [
+    "bagaar",
+    "bgr",
+    "breadcrumbs",
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://git.bagaar.be/shelf/front-end/ember/bgr-ember-breadcrumbs",
   "license": "MIT",
-  "author": "",
+  "author": "Bagaar",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -23,6 +26,7 @@
     "ember-cli-babel": "^6.6.0"
   },
   "devDependencies": {
+    "bgr-ember-addon-blueprint": "^0.1.2",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.2.0",
