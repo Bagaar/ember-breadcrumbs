@@ -1,7 +1,7 @@
 {
   "name": "bgr-ember-breadcrumbs",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Easy breadcrumb management for Ember applications.",
   "keywords": [
     "ember-addon"
   ],
