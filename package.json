@@ -20,13 +20,15 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
-    "test:all": "ember try:each"
+    "test:all": "ember try:each",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0"
   },
   "devDependencies": {
     "bgr-ember-addon-blueprint": "^0.1.2",
+    "bgr-ember-lint": "^0.8.1",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.2.0",
@@ -47,8 +49,12 @@
     "ember-source": "~3.2.0",
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^0.2.23",
+    "eslint-config-bgr": "^0.3.0",
+    "eslint-config-bgr-ember": "^0.2.1",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
     "loader.js": "^4.2.3",
     "qunit-dom": "^0.6.2"
   },
@@ -57,5 +63,11 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
