@@ -1,50 +1,35 @@
-bgr-ember-breadcrumbs
-==============================================================================
+# Bagaar Ember Breadcrumbs
 
-[Short description of the addon.]
+[![pipeline status](https://git.bagaar.be/shelf/front-end/ember/bgr-ember-breadcrumbs/badges/develop/pipeline.svg)](https://git.bagaar.be/shelf/front-end/ember/bgr-ember-breadcrumbs/commits/develop)
 
-Installation
-------------------------------------------------------------------------------
+Bagaar logo goes here.
 
+**bgr-ember-breadcrumbs is built and maintained by [Bagaar](http://bagaar.be).**
+
+Easy breadcrumb management for Ember applications.
+
+## Installation
+
+```shell
+$ ember install bgr-ember-breadcrumbs
 ```
-ember install bgr-ember-breadcrumbs
-```
 
+## Configuration
 
-Usage
-------------------------------------------------------------------------------
+Describe how the addon can be configured (e.g. via `config/environment.js`).
 
-[Longer description of how to use the addon in apps.]
+## Usage
 
+Describe, step by step, how the addon should be used.
 
-Contributing
-------------------------------------------------------------------------------
+## Examples
 
-### Installation
+Provide clear additional code examples.
 
-* `git clone <repository-url>`
-* `cd bgr-ember-breadcrumbs`
-* `npm install`
+## Contribution Guidelines
 
-### Linting
+Describe the contribution guidelines.
 
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+## License
 
-### Running tests
-
-* `ember test` – Runs the test suite on the current Ember version
-* `ember test --server` – Runs the test suite in "watch mode"
-* `ember try:each` – Runs the test suite against multiple Ember versions
-
-### Running the dummy application
-
-* `ember serve`
-* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](./LICENSE.md).

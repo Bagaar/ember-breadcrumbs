@@ -1,0 +1,7 @@
+{{#each bgrBreadcrumbs.elements as |element|}}
+  {{#-in-element element}}
+    <li class="breadcrumbs__item">
+      {{yield "breadcrumbs__link"}}
+    </li>
+  {{/-in-element}}
+{{/each}}
