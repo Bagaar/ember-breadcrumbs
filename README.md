@@ -14,13 +14,7 @@ Easy breadcrumb management for Ember applications.
 $ ember install bgr-ember-breadcrumbs
 ```
 
-## Configuration
-
-Describe how the addon can be configured (e.g. via `config/environment.js`).
-
 ## Usage
-
-Describe, step by step, how the addon should be used.
 
 ### 1\. Defining Where You Want the Breadcrumbs to Be Rendered
 
@@ -81,10 +75,6 @@ The rendered output will be:
 ### 3\. Styling the Breadcrumbs
 
 The addon doesn't ship with default styling, this should be done inside the consuming project.
-
-## Examples
-
-Provide clear additional code examples.
 
 ## Contribution Guidelines
 
