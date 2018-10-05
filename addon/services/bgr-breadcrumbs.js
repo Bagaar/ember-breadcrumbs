@@ -6,7 +6,7 @@ export default Service.extend({
    * state
    */
 
-  elements: null,
+  instances: null,
 
   /**
    * hooks
@@ -15,6 +15,6 @@ export default Service.extend({
   init() {
     this._super(...arguments);
 
-    this.elements = A([]);
+    this.instances = A([]);
   },
 });

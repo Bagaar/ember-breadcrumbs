@@ -75,6 +75,12 @@ The rendered output will be:
 
 The addon doesn't ship with default styling, this should be done inside the consuming project.
 
+### 4\. Options
+
+Name          | Description                                                 | Type   | Default
+:------------ | :---------------------------------------------------------- | :----- | :------------
+baseClassName | The base class name used to render the BEM CSS class names. | String | 'breadcrumbs'
+
 ## Contribution Guidelines
 
 Describe the contribution guidelines.
