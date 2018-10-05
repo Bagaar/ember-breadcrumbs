@@ -1,7 +1,7 @@
 {{#each bgrBreadcrumbs.instances as |instance|}}
   {{#-in-element instance.element}}
-    <li class="{{instance.baseClassName}}__item">
-      {{yield (concat instance.baseClassName "__link")}}
+    <li class="{{instance.itemClassName}}">
+      {{yield instance.linkClassName}}
     </li>
   {{/-in-element}}
 {{/each}}

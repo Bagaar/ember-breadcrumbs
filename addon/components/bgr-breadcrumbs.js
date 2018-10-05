@@ -14,6 +14,8 @@ export default Component.extend({
    */
 
   baseClassName: 'breadcrumbs',
+  itemClassName: 'breadcrumbs__item',
+  linkClassName: 'breadcrumbs__link',
 
   /**
    * state

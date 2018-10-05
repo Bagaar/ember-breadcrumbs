@@ -77,9 +77,11 @@ The addon doesn't ship with default styling, this should be done inside the cons
 
 ### 4\. Options
 
-Name          | Description                                                 | Type   | Default
-:------------ | :---------------------------------------------------------- | :----- | :------------
-baseClassName | The base class name used to render the BEM CSS class names. | String | 'breadcrumbs'
+Name          | Description          | Type   | Default
+:------------ | :------------------- | :----- | :------------------
+baseClassName | The base class name. | String | 'breadcrumbs'
+itemClassName | The item class name. | String | 'breadcrumbs__item'
+linkClassName | The link class name. | String | 'breadcrumbs__link'
 
 ## Contribution Guidelines
 

@@ -6,15 +6,19 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | bgr-breadcrumbs-item', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders the correct base class name', async function (assert) {
+  test('it renders the correct class names', async function (assert) {
     await render(hbs `
-      {{bgr-breadcrumbs baseClassName="base-class-name"}}
+      {{bgr-breadcrumbs
+        baseClassName="base-class-name"
+        itemClassName="item-class-name"
+        linkClassName="link-class-name"
+      }}
 
       {{#bgr-breadcrumbs-item as |linkClass|}}
         {{link-to "Foo" "foo" class=linkClass}}
       {{/bgr-breadcrumbs-item}}
     `);
 
-    assert.ok(this.element.querySelector('.base-class-name .base-class-name__link'));
+    assert.ok(this.element.querySelector('.base-class-name .item-class-name .link-class-name'));
   });
 });
