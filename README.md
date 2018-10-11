@@ -75,6 +75,14 @@ The rendered output will be:
 
 The addon doesn't ship with default styling, this should be done inside the consuming project.
 
+### 4\. Options
+
+Name          | Description                 | Type   | Default
+:------------ | :-------------------------- | :----- | :------------------
+className     | The component's class name. | String | 'breadcrumbs'
+itemClassName | The item class name.        | String | 'breadcrumbs__item'
+linkClassName | The link class name.        | String | 'breadcrumbs__link'
+
 ## Contribution Guidelines
 
 Describe the contribution guidelines.
