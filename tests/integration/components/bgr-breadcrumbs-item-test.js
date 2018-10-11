@@ -9,7 +9,7 @@ module('Integration | Component | bgr-breadcrumbs-item', function (hooks) {
   test('it renders the correct class names', async function (assert) {
     await render(hbs `
       {{bgr-breadcrumbs
-        baseClassName="base-class-name"
+        className="class-name"
         itemClassName="item-class-name"
         linkClassName="link-class-name"
       }}
@@ -19,6 +19,6 @@ module('Integration | Component | bgr-breadcrumbs-item', function (hooks) {
       {{/bgr-breadcrumbs-item}}
     `);
 
-    assert.ok(this.element.querySelector('.base-class-name .item-class-name .link-class-name'));
+    assert.ok(this.element.querySelector('.class-name .item-class-name .link-class-name'));
   });
 });

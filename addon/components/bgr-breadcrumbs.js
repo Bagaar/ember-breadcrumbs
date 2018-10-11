@@ -13,7 +13,7 @@ export default Component.extend({
    * props
    */
 
-  baseClassName: 'breadcrumbs',
+  className: 'breadcrumbs',
   itemClassName: 'breadcrumbs__item',
   linkClassName: 'breadcrumbs__link',
 
@@ -21,7 +21,7 @@ export default Component.extend({
    * state
    */
 
-  classNameBindings: ['baseClassName'],
+  classNameBindings: ['className'],
   layout,
   tagName: 'ul',
 
