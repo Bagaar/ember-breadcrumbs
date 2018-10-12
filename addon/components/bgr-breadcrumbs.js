@@ -10,10 +10,18 @@ export default Component.extend({
   bgrBreadcrumbs: service(),
 
   /**
+   * props
+   */
+
+  className: 'breadcrumbs',
+  itemClassName: 'breadcrumbs__item',
+  linkClassName: 'breadcrumbs__link',
+
+  /**
    * state
    */
 
-  classNames: ['breadcrumbs'],
+  classNameBindings: ['className'],
   layout,
   tagName: 'ul',
 
@@ -22,10 +30,10 @@ export default Component.extend({
    */
 
   didInsertElement() {
-    this.get('bgrBreadcrumbs.elements').addObject(this.get('element'));
+    this.get('bgrBreadcrumbs.instances').addObject(this);
   },
 
   willDestroyElement() {
-    this.get('bgrBreadcrumbs.elements').removeObject(this.get('element'));
+    this.get('bgrBreadcrumbs.instances').removeObject(this);
   },
 });
