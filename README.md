@@ -4,6 +4,8 @@
 
 **`@bagaar/ember-breadcrumbs` is built and maintained by [Bagaar](http://bagaar.be).**
 
+[![Build Status](https://travis-ci.org/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.org/Bagaar/ember-breadcrumbs)
+
 Easy breadcrumb management for Ember applications.
 
 ## Installation
@@ -50,9 +52,10 @@ Leaving behind breadcrumbs like this might seem very verbose, but actually it's 
 
 1. Because you leave behind breadcrumbs inside templates, the addon doesn't have to take async model hooks into account.
 2. Because you use Ember's `{{link-to}}` component to define breadcrumb links, you have complete control over:
-   - **how you define them** (inline vs. block)
-   - **how they should work** (route, dynamic segments, query parameters, ...)
-   - **how they should look like** (text, icons, additional CSS class names, ...)
+
+  - **how you define them** (inline vs. block)
+  - **how they should work** (route, dynamic segments, query parameters, ...)
+  - **how they should look like** (text, icons, additional CSS class names, ...)
 
 #### Rendered Output
 
