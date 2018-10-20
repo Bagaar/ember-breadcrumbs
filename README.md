@@ -4,7 +4,7 @@
 
 **`@bagaar/ember-breadcrumbs` is built and maintained by [Bagaar](http://bagaar.be).**
 
-[![Build Status](https://travis-ci.org/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.org/Bagaar/ember-breadcrumbs)
+[![npm version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs) [![Build Status](https://travis-ci.org/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.org/Bagaar/ember-breadcrumbs)
 
 Easy breadcrumb management for Ember applications.
 
