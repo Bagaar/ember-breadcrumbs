@@ -22,7 +22,7 @@ ember install @bagaar/ember-breadcrumbs
 {{bgr-breadcrumbs}}
 ```
 
-**NOTE:** It's also possible to render multiple instances of the `{{bgr-breadcrumbs}}` component.
+💡 It's also possible to render multiple instances of the `{{bgr-breadcrumbs}}` component.
 
 ### 2\. Leaving Behind Breadcrumbs
 
@@ -42,7 +42,7 @@ ember install @bagaar/ember-breadcrumbs
 {{/bgr-breadcrumbs-item}}
 ```
 
-**NOTE:** The `{{bgr-breadcrumbs-item}}` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `{{bgr-breadcrumbs}}` component using Ember's `{{-in-element}}` component.
+💡 The `{{bgr-breadcrumbs-item}}` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `{{bgr-breadcrumbs}}` component using Ember's `{{-in-element}}` component.
 
 #### Advantages
 
@@ -75,11 +75,11 @@ The addon doesn't ship with default styling, this should be done inside the cons
 
 ### 4\. Options
 
-Name          | Description               | Type   | Default
-:------------ | :------------------------ | :----- | :------------------
-className     | The component class name. | String | 'breadcrumbs'
-itemClassName | The item class name.      | String | 'breadcrumbs__item'
-linkClassName | The link class name.      | String | 'breadcrumbs__link'
+Name              | Description               | Type   | Default
+:---------------- | :------------------------ | :----- | :------------------
+**className**     | The component class name. | String | 'breadcrumbs'
+**itemClassName** | The item class name.      | String | 'breadcrumbs__item'
+**linkClassName** | The link class name.      | String | 'breadcrumbs__link'
 
 ## License
 
