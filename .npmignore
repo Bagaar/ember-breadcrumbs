@@ -10,7 +10,6 @@
 .eslintignore
 .eslintrc.js
 .gitignore
-.gitlab-ci.yml
 .watchmanconfig
 .travis.yml
 bower.json

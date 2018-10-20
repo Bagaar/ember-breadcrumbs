@@ -1,17 +1,17 @@
 # Bagaar Ember Breadcrumbs
 
-[![pipeline status](https://git.bagaar.be/shelf/front-end/ember/bgr-ember-breadcrumbs/badges/develop/pipeline.svg)](https://git.bagaar.be/shelf/front-end/ember/bgr-ember-breadcrumbs/commits/develop)
+Badges go here.
 
 Bagaar logo goes here.
 
-**bgr-ember-breadcrumbs is built and maintained by [Bagaar](http://bagaar.be).**
+**@bagaar/ember-breadcrumbs is built and maintained by [Bagaar](http://bagaar.be).**
 
 Easy breadcrumb management for Ember applications.
 
 ## Installation
 
 ```shell
-$ ember install bgr-ember-breadcrumbs
+$ ember install @bagaar/ember-breadcrumbs
 ```
 
 ## Usage

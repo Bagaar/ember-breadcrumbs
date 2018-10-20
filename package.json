@@ -1,5 +1,5 @@
 {
-  "name": "bgr-ember-breadcrumbs",
+  "name": "@bagaar/ember-breadcrumbs",
   "version": "0.2.0",
   "description": "Easy breadcrumb management for Ember applications.",
   "keywords": [
@@ -8,7 +8,7 @@
     "breadcrumbs",
     "ember-addon"
   ],
-  "repository": "https://git.bagaar.be/shelf/front-end/ember/bgr-ember-breadcrumbs",
+  "repository": "https://github.com/Bagaar/ember-breadcrumbs",
   "license": "MIT",
   "author": "Bagaar",
   "directories": {
