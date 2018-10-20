@@ -27,6 +27,8 @@
     "ember-cli-htmlbars": "^2.0.1"
   },
   "devDependencies": {
+    "@bagaar/eslint-config": "^0.4.0",
+    "@bagaar/eslint-config-ember": "^0.3.0",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.2.0",
@@ -46,8 +48,6 @@
     "ember-source": "~3.2.0",
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^0.2.23",
-    "eslint-config-bgr": "^0.3.1",
-    "eslint-config-bgr-ember": "^0.2.2",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
     "loader.js": "^4.2.3",
