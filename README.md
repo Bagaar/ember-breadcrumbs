@@ -1,17 +1,15 @@
 # Bagaar Ember Breadcrumbs
 
-Badges go here.
+![Bagaar Logo](https://bagaar.be/hubfs/logo-bagaar-black.svg)
 
-Bagaar logo goes here.
-
-**@bagaar/ember-breadcrumbs is built and maintained by [Bagaar](http://bagaar.be).**
+**`@bagaar/ember-breadcrumbs` is built and maintained by [Bagaar](http://bagaar.be).**
 
 Easy breadcrumb management for Ember applications.
 
 ## Installation
 
 ```shell
-$ ember install @bagaar/ember-breadcrumbs
+ember install @bagaar/ember-breadcrumbs
 ```
 
 ## Usage
@@ -77,15 +75,11 @@ The addon doesn't ship with default styling, this should be done inside the cons
 
 ### 4\. Options
 
-Name          | Description                 | Type   | Default
-:------------ | :-------------------------- | :----- | :------------------
-className     | The component's class name. | String | 'breadcrumbs'
-itemClassName | The item class name.        | String | 'breadcrumbs__item'
-linkClassName | The link class name.        | String | 'breadcrumbs__link'
-
-## Contribution Guidelines
-
-Describe the contribution guidelines.
+Name          | Description               | Type   | Default
+:------------ | :------------------------ | :----- | :------------------
+className     | The component class name. | String | 'breadcrumbs'
+itemClassName | The item class name.      | String | 'breadcrumbs__item'
+linkClassName | The link class name.      | String | 'breadcrumbs__link'
 
 ## License
 

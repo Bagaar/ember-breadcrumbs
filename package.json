@@ -6,6 +6,7 @@
     "bagaar",
     "bgr",
     "breadcrumbs",
+    "ember",
     "ember-addon"
   ],
   "repository": "https://github.com/Bagaar/ember-breadcrumbs",
