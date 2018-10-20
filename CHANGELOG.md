@@ -1,1 +1,0 @@
-# Bagaar Ember Breadcrumbs Changelog

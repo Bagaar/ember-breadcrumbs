@@ -28,7 +28,6 @@
     "ember-cli-htmlbars": "^2.0.1"
   },
   "devDependencies": {
-    "bgr-ember-addon-blueprint": "^0.1.3",
     "bgr-ember-lint": "^0.8.2",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.0.0",
