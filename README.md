@@ -6,7 +6,7 @@
 
 [![npm version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs) [![Build Status](https://travis-ci.org/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.org/Bagaar/ember-breadcrumbs)
 
-Easy breadcrumb management for Ember applications.
+Template based breadcrumb management for Ember applications.
 
 ## Installation
 
@@ -24,27 +24,27 @@ ember install @bagaar/ember-breadcrumbs
 {{bgr-breadcrumbs}}
 ```
 
-💡 It's also possible to render multiple instances of the `{{bgr-breadcrumbs}}` component.
+> **NOTE:** It's also possible to render multiple instances of the `{{bgr-breadcrumbs}}` component.
 
 ### 2\. Leaving Behind Breadcrumbs
 
 ```html
 <!-- foo.hbs -->
 
-{{#bgr-breadcrumbs-item as |linkClass|}}
-  {{link-to "Foo" "foo" class=linkClass}}
+{{#bgr-breadcrumbs-item as |linkClassName|}}
+  {{link-to "Foo" "foo" class=linkClassName}}
 {{/bgr-breadcrumbs-item}}
 ```
 
 ```html
 <!-- foo/bar.hbs -->
 
-{{#bgr-breadcrumbs-item as |linkClass|}}
-  {{link-to "Bar" "foo.bar" class=linkClass}}
+{{#bgr-breadcrumbs-item as |linkClassName|}}
+  {{link-to "Bar" "foo.bar" class=linkClassName}}
 {{/bgr-breadcrumbs-item}}
 ```
 
-💡 The `{{bgr-breadcrumbs-item}}` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `{{bgr-breadcrumbs}}` component using Ember's `{{-in-element}}` component.
+> **NOTE:** The `{{bgr-breadcrumbs-item}}` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `{{bgr-breadcrumbs}}` component using Ember's `{{-in-element}}` component.
 
 #### Advantages
 
