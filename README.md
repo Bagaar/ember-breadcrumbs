@@ -32,7 +32,9 @@ ember install @bagaar/ember-breadcrumbs
 <!-- foo.hbs -->
 
 {{#bgr-breadcrumbs-item as |linkClassName|}}
-  {{link-to "Foo" "foo" class=linkClassName}}
+  {{#link-to "foo" class=linkClassName}}
+    Foo
+  {{/link-to}}
 {{/bgr-breadcrumbs-item}}
 ```
 
@@ -40,7 +42,9 @@ ember install @bagaar/ember-breadcrumbs
 <!-- foo/bar.hbs -->
 
 {{#bgr-breadcrumbs-item as |linkClassName|}}
-  {{link-to "Bar" "foo.bar" class=linkClassName}}
+  {{#link-to "foo.bar" class=linkClassName}}
+    Bar
+  {{/link-to}}
 {{/bgr-breadcrumbs-item}}
 ```
 
@@ -97,7 +101,7 @@ This will make all `@bagaar/ember-breadcrumbs` components available inside the e
 }
 ```
 
-### 2\. Make the `{{bgr-breadcrumbs}}` Service Available Inside the Engine
+### 2\. Make the `bgr-breadcrumbs` Service Available Inside the Engine
 
 This will make sure that the same instance of the `bgr-breadcrumbs` service is used inside the engine as inside the host application.
 
