@@ -83,6 +83,56 @@ Name              | Description               | Type   | Default
 **itemClassName** | The item class name.      | String | 'breadcrumbs__item'
 **linkClassName** | The link class name.      | String | 'breadcrumbs__link'
 
+## Usage Inside an Engine
+
+### 1\. Add `@bagaar/ember-breadcrumbs` to Your Engine's `dependencies`
+
+This will make all `@bagaar/ember-breadcrumbs` components available inside the engine.
+
+```json
+{
+  "dependencies": {
+    "@bagaar/ember-breadcrumbs": "*"
+  }
+}
+```
+
+### 2\. Make the `{{bgr-breadcrumbs}}` Service Available Inside the Engine
+
+This will make sure that the same instance of the `bgr-breadcrumbs` service is used inside the engine as inside the host application.
+
+```javascript
+// app/app.js
+
+const App = Application.extend({
+  // ...
+  engines: {
+    engineName: {
+      dependencies: {
+        services: [
+          'bgr-breadcrumbs'
+        ]
+      }
+    }
+  }
+});
+```
+
+```javascript
+// lib/engine-name/addon/engine.js
+
+const Eng = Engine.extend({
+  // ...
+  dependencies: {
+    services: [
+      'bgr-breadcrumbs'
+    ]
+  }
+});
+```
+
+**That's it! Now you should be able to leave behind breadcrumbs inside the engine and render them inside the host application.**
+
 ## License
 
 This project is licensed under the [MIT License](./LICENSE.md).
