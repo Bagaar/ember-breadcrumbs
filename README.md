@@ -6,7 +6,7 @@
 
 [![npm version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs) [![Build Status](https://travis-ci.org/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.org/Bagaar/ember-breadcrumbs)
 
-Easy breadcrumb management for Ember applications.
+Template based breadcrumb management for Ember applications.
 
 ## Installation
 
@@ -24,27 +24,31 @@ ember install @bagaar/ember-breadcrumbs
 {{bgr-breadcrumbs}}
 ```
 
-💡 It's also possible to render multiple instances of the `{{bgr-breadcrumbs}}` component.
+> **NOTE:** It's also possible to render multiple instances of the `{{bgr-breadcrumbs}}` component.
 
 ### 2\. Leaving Behind Breadcrumbs
 
 ```html
 <!-- foo.hbs -->
 
-{{#bgr-breadcrumbs-item as |linkClass|}}
-  {{link-to "Foo" "foo" class=linkClass}}
+{{#bgr-breadcrumbs-item as |linkClassName|}}
+  {{#link-to "foo" class=linkClassName}}
+    Foo
+  {{/link-to}}
 {{/bgr-breadcrumbs-item}}
 ```
 
 ```html
 <!-- foo/bar.hbs -->
 
-{{#bgr-breadcrumbs-item as |linkClass|}}
-  {{link-to "Bar" "foo.bar" class=linkClass}}
+{{#bgr-breadcrumbs-item as |linkClassName|}}
+  {{#link-to "foo.bar" class=linkClassName}}
+    Bar
+  {{/link-to}}
 {{/bgr-breadcrumbs-item}}
 ```
 
-💡 The `{{bgr-breadcrumbs-item}}` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `{{bgr-breadcrumbs}}` component using Ember's `{{-in-element}}` component.
+> **NOTE:** The `{{bgr-breadcrumbs-item}}` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `{{bgr-breadcrumbs}}` component using Ember's `{{-in-element}}` component.
 
 #### Advantages
 
@@ -82,6 +86,56 @@ Name              | Description               | Type   | Default
 **className**     | The component class name. | String | 'breadcrumbs'
 **itemClassName** | The item class name.      | String | 'breadcrumbs__item'
 **linkClassName** | The link class name.      | String | 'breadcrumbs__link'
+
+## Usage Inside an Engine
+
+### 1\. Add `@bagaar/ember-breadcrumbs` to Your Engine's `dependencies`
+
+This will make all `@bagaar/ember-breadcrumbs` components available inside the engine.
+
+```json
+{
+  "dependencies": {
+    "@bagaar/ember-breadcrumbs": "*"
+  }
+}
+```
+
+### 2\. Make the `bgr-breadcrumbs` Service Available Inside the Engine
+
+This will make sure that the same instance of the `bgr-breadcrumbs` service is used inside the engine as inside the host application.
+
+```javascript
+// app/app.js
+
+const App = Application.extend({
+  // ...
+  engines: {
+    engineName: {
+      dependencies: {
+        services: [
+          'bgr-breadcrumbs'
+        ]
+      }
+    }
+  }
+});
+```
+
+```javascript
+// lib/engine-name/addon/engine.js
+
+const Eng = Engine.extend({
+  // ...
+  dependencies: {
+    services: [
+      'bgr-breadcrumbs'
+    ]
+  }
+});
+```
+
+**That's it! Now you should be able to leave behind breadcrumbs inside the engine and render them inside the host application.**
 
 ## License
 

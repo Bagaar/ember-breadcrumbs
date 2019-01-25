@@ -14,8 +14,8 @@ module('Integration | Component | bgr-breadcrumbs-item', function (hooks) {
         linkClassName="link-class-name"
       }}
 
-      {{#bgr-breadcrumbs-item as |linkClass|}}
-        {{link-to "Foo" "foo" class=linkClass}}
+      {{#bgr-breadcrumbs-item as |linkClassName|}}
+        {{link-to "Foo" "foo" class=linkClassName}}
       {{/bgr-breadcrumbs-item}}
     `);
 
