@@ -18,8 +18,8 @@ ember install @bagaar/ember-breadcrumbs
 
 ### 1\. Defining Where You Want the Breadcrumbs to Be Rendered
 
-```html
-<!-- application.hbs -->
+```handlebars
+{{! app/templates/application.hbs }}
 
 {{bgr-breadcrumbs}}
 ```
@@ -28,8 +28,8 @@ ember install @bagaar/ember-breadcrumbs
 
 ### 2\. Leaving Behind Breadcrumbs
 
-```html
-<!-- foo.hbs -->
+```handlebars
+{{! app/templates/foo.hbs }}
 
 {{#bgr-breadcrumbs-item as |linkClassName|}}
   {{#link-to "foo" class=linkClassName}}
@@ -38,8 +38,8 @@ ember install @bagaar/ember-breadcrumbs
 {{/bgr-breadcrumbs-item}}
 ```
 
-```html
-<!-- foo/bar.hbs -->
+```handlebars
+{{! app/templates/foo/bar.hbs }}
 
 {{#bgr-breadcrumbs-item as |linkClassName|}}
   {{#link-to "foo.bar" class=linkClassName}}
