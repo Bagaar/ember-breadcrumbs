@@ -2,11 +2,18 @@
 
 ![Bagaar Logo](https://bagaar.be/hubfs/logo-bagaar-black.svg)
 
-**`@bagaar/ember-breadcrumbs` is built and maintained by [Bagaar](http://bagaar.be).**
+**`@bagaar/ember-breadcrumbs` is built and maintained by [Bagaar](https://bagaar.be).**
 
 [![NPM Version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs) [![Build Status](https://travis-ci.org/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.org/Bagaar/ember-breadcrumbs) [![Ember Observer Score](https://emberobserver.com/badges/-bagaar-ember-breadcrumbs.svg)](https://emberobserver.com/addons/@bagaar/ember-breadcrumbs) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 Template based breadcrumb management for Ember applications.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Usage Inside an Engine](#usage-inside-an-engine)
+- [License](#license)
 
 ## Installation
 
