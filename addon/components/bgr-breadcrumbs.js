@@ -1,16 +1,16 @@
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
-import layout from '../templates/components/bgr-breadcrumbs';
+import Component from '@ember/component'
+import { inject as service } from '@ember/service'
+import layout from '../templates/components/bgr-breadcrumbs'
 
 export default Component.extend({
   /**
-   * injections
+   * Services
    */
 
-  bgrBreadcrumbs: service(),
+  breadcrumbsService: service('bgr-breadcrumbs'),
 
   /**
-   * props
+   * Arguments
    */
 
   className: 'breadcrumbs',
@@ -18,7 +18,7 @@ export default Component.extend({
   linkClassName: 'breadcrumbs__link',
 
   /**
-   * state
+   * State
    */
 
   classNameBindings: ['className'],
@@ -26,14 +26,14 @@ export default Component.extend({
   tagName: 'ul',
 
   /**
-   * hooks
+   * Hooks
    */
 
-  didInsertElement() {
-    this.get('bgrBreadcrumbs.instances').addObject(this);
+  didInsertElement () {
+    this.get('breadcrumbsService.instances').addObject(this)
   },
 
-  willDestroyElement() {
-    this.get('bgrBreadcrumbs.instances').removeObject(this);
-  },
-});
+  willDestroyElement () {
+    this.get('breadcrumbsService.instances').removeObject(this)
+  }
+})

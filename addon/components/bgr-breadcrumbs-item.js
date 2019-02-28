@@ -1,18 +1,18 @@
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
-import layout from '../templates/components/bgr-breadcrumbs-item';
+import Component from '@ember/component'
+import { inject as service } from '@ember/service'
+import layout from '../templates/components/bgr-breadcrumbs-item'
 
 export default Component.extend({
   /**
-   * injections
+   * Services
    */
 
-  bgrBreadcrumbs: service(),
+  breadcrumbsService: service('bgr-breadcrumbs'),
 
   /**
-   * state
+   * State
    */
 
   layout,
-  tagName: '',
-});
+  tagName: ''
+})
