@@ -1,4 +1,4 @@
-{{#each bgrBreadcrumbs.instances as |instance|}}
+{{#each breadcrumbsService.instances as |instance|}}
   {{#-in-element instance.element}}
     <li class={{instance.itemClassName}}>
       {{yield instance.linkClassName}}

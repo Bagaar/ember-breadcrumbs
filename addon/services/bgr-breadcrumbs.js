@@ -1,20 +1,20 @@
-import { A } from '@ember/array';
-import Service from '@ember/service';
+import { A } from '@ember/array'
+import Service from '@ember/service'
 
 export default Service.extend({
   /**
-   * state
+   * State
    */
 
   instances: null,
 
   /**
-   * hooks
+   * Hooks
    */
 
-  init() {
-    this._super(...arguments);
+  init () {
+    this._super(...arguments)
 
-    this.instances = A([]);
-  },
-});
+    this.instances = A([])
+  }
+})
