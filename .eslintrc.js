@@ -6,7 +6,6 @@ module.exports = {
   },
   plugins: ['ember'],
   extends: [
-    'eslint:recommended',
     'plugin:ember/recommended',
     '@bagaar/eslint-config-ember'
   ],
