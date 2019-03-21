@@ -28,34 +28,34 @@ ember install @bagaar/ember-breadcrumbs
 ```handlebars
 {{! app/templates/application.hbs }}
 
-{{bgr-breadcrumbs}}
+<Breadcrumbs />
 ```
 
-> **NOTE:** It's also possible to render multiple instances of the `{{bgr-breadcrumbs}}` component.
+> **NOTE:** It's also possible to render multiple instances of the `<Breadcrumbs />` component.
 
 ### 2\. Leaving Behind Breadcrumbs
 
 ```handlebars
 {{! app/templates/foo.hbs }}
 
-{{#bgr-breadcrumbs-item as |linkClassName|}}
+<BreadcrumbsItem as |linkClassName|>
   {{#link-to "foo" class=linkClassName}}
     Foo
   {{/link-to}}
-{{/bgr-breadcrumbs-item}}
+</BreadcrumbsItem>
 ```
 
 ```handlebars
 {{! app/templates/foo/bar.hbs }}
 
-{{#bgr-breadcrumbs-item as |linkClassName|}}
+<BreadcrumbsItem as |linkClassName|>
   {{#link-to "foo.bar" class=linkClassName}}
     Bar
   {{/link-to}}
-{{/bgr-breadcrumbs-item}}
+</BreadcrumbsItem>
 ```
 
-> **NOTE:** The `{{bgr-breadcrumbs-item}}` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `{{bgr-breadcrumbs}}` component using Ember's `{{-in-element}}` component.
+> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `<Breadcrumbs />` component using Ember's `{{-in-element}}` component.
 
 #### Advantages
 
@@ -86,7 +86,7 @@ The rendered output will be:
 
 The addon doesn't ship with default styling, this should be done inside the consuming project.
 
-### 4\. Options
+### 4\. Arguments
 
 Name              | Description               | Type   | Default
 :---------------- | :------------------------ | :----- | :------------------
@@ -108,9 +108,9 @@ This will make all `@bagaar/ember-breadcrumbs` components available inside the e
 }
 ```
 
-### 2\. Make the `bgr-breadcrumbs` Service Available Inside the Engine
+### 2\. Make the `breadcrumbs` Service Available Inside the Engine
 
-This will make sure that the same instance of the `bgr-breadcrumbs` service is used inside the engine as inside the host application.
+This will make sure that the same instance of the `breadcrumbs` service is used inside the engine as inside the host application.
 
 ```javascript
 // app/app.js
@@ -121,7 +121,7 @@ const App = Application.extend({
     engineName: {
       dependencies: {
         services: [
-          'bgr-breadcrumbs'
+          'breadcrumbs'
         ]
       }
     }
@@ -136,7 +136,7 @@ const Eng = Engine.extend({
   // ...
   dependencies: {
     services: [
-      'bgr-breadcrumbs'
+      'breadcrumbs'
     ]
   }
 });

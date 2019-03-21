@@ -3,20 +3,20 @@ import { setupRenderingTest } from 'ember-qunit'
 import { render } from '@ember/test-helpers'
 import hbs from 'htmlbars-inline-precompile'
 
-module('Integration | Component | bgr-breadcrumbs-item', function (hooks) {
+module('Integration | Component | breadcrumbs-item', function (hooks) {
   setupRenderingTest(hooks)
 
   test('it renders the correct class names', async function (assert) {
     await render(hbs`
-      {{bgr-breadcrumbs
-        className="class-name"
-        itemClassName="item-class-name"
-        linkClassName="link-class-name"
-      }}
+      <Breadcrumbs
+        @className="class-name"
+        @itemClassName="item-class-name"
+        @linkClassName="link-class-name"
+      />
 
-      {{#bgr-breadcrumbs-item as |linkClassName|}}
+      <BreadcrumbsItem as |linkClassName|>
         {{link-to "Foo" "foo" class=linkClassName}}
-      {{/bgr-breadcrumbs-item}}
+      </BreadcrumbsItem>
     `)
 
     assert.ok(
