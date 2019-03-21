@@ -1,7 +1,7 @@
 {{#each breadcrumbsService.instances as |instance|}}
   {{#-in-element instance.element}}
-    <li class={{instance.itemClassName}}>
-      {{yield instance.linkClassName}}
+    <li class={{instance.itemClass}}>
+      {{yield instance.linkClass}}
     </li>
   {{/-in-element}}
 {{/each}}
