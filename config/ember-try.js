@@ -21,6 +21,7 @@ module.exports = function () {
           npm: {
             devDependencies: {
               '@ember/jquery': '^0.5.1',
+              'ember-angle-bracket-invocation-polyfill': '^1.2.5',
               'ember-source': '~2.16.0'
             }
           }
@@ -35,6 +36,7 @@ module.exports = function () {
           npm: {
             devDependencies: {
               '@ember/jquery': '^0.5.1',
+              'ember-angle-bracket-invocation-polyfill': '^1.2.5',
               'ember-source': '~2.18.0'
             }
           }
