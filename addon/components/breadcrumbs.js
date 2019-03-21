@@ -1,13 +1,13 @@
 import Component from '@ember/component'
 import { inject as service } from '@ember/service'
-import layout from '../templates/components/bgr-breadcrumbs'
+import layout from '../templates/components/breadcrumbs'
 
 export default Component.extend({
   /**
    * Services
    */
 
-  breadcrumbsService: service('bgr-breadcrumbs'),
+  breadcrumbsService: service('breadcrumbs'),
 
   /**
    * Arguments
