@@ -9,13 +9,13 @@ module('Integration | Component | breadcrumbs-item', function (hooks) {
   test('it renders the correct class names', async function (assert) {
     await render(hbs`
       <Breadcrumbs
-        @className="class-name"
-        @itemClassName="item-class-name"
-        @linkClassName="link-class-name"
+        class="class-name"
+        @itemClass="item-class-name"
+        @linkClass="link-class-name"
       />
 
-      <BreadcrumbsItem as |linkClassName|>
-        {{link-to "Foo" "foo" class=linkClassName}}
+      <BreadcrumbsItem as |linkClass|>
+        {{link-to "Foo" "foo" class=linkClass}}
       </BreadcrumbsItem>
     `)
 

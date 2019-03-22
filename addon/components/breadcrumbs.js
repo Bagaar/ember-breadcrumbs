@@ -13,15 +13,13 @@ export default Component.extend({
    * Arguments
    */
 
-  className: 'breadcrumbs',
-  itemClassName: 'breadcrumbs__item',
-  linkClassName: 'breadcrumbs__link',
+  itemClass: null,
+  linkClass: null,
 
   /**
    * State
    */
 
-  classNameBindings: ['className'],
   layout,
   tagName: 'ul',
 

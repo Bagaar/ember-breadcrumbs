@@ -28,7 +28,11 @@ ember install @bagaar/ember-breadcrumbs
 ```handlebars
 {{! app/templates/application.hbs }}
 
-<Breadcrumbs />
+<Breadcrumbs
+  class="breadcrumbs"
+  @itemClass="breadcrumbs__item"
+  @linkClass="breadcrumbs__link"
+/>
 ```
 
 > **NOTE:** It's also possible to render multiple instances of the `<Breadcrumbs />` component.
@@ -38,8 +42,8 @@ ember install @bagaar/ember-breadcrumbs
 ```handlebars
 {{! app/templates/foo.hbs }}
 
-<BreadcrumbsItem as |linkClassName|>
-  {{#link-to "foo" class=linkClassName}}
+<BreadcrumbsItem as |linkClass|>
+  {{#link-to "foo" class=linkClass}}
     Foo
   {{/link-to}}
 </BreadcrumbsItem>
@@ -48,8 +52,8 @@ ember install @bagaar/ember-breadcrumbs
 ```handlebars
 {{! app/templates/foo/bar.hbs }}
 
-<BreadcrumbsItem as |linkClassName|>
-  {{#link-to "foo.bar" class=linkClassName}}
+<BreadcrumbsItem as |linkClass|>
+  {{#link-to "foo.bar" class=linkClass}}
     Bar
   {{/link-to}}
 </BreadcrumbsItem>
@@ -84,15 +88,14 @@ The rendered output will be:
 
 ### 3\. Styling the Breadcrumbs
 
-The addon doesn't ship with default styling, this should be done inside the consuming project.
+The addon doesn't ship with default styling. This should be done inside the consuming project.
 
-### 4\. Arguments
+### 4\. `<Breadcrumbs />` arguments
 
-Name              | Description               | Type   | Default
-:---------------- | :------------------------ | :----- | :------------------
-**className**     | The component class name. | String | 'breadcrumbs'
-**itemClassName** | The item class name.      | String | 'breadcrumbs__item'
-**linkClassName** | The link class name.      | String | 'breadcrumbs__link'
+Name          | Description                                                                      | Type   
+:-------------| :------------------------------------------------------------------------------- | :----- 
+**itemClass** | The class(es) that will be added to all child `<BreadcrumbsItem />` components   | String 
+**linkClass** | The class(es) that will be yielded to the `<BreadcrumbsItem />`'s block content  | String 
 
 ## Usage Inside an Engine
 
