@@ -27,6 +27,7 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "@ember/render-modifiers": "^1.0.0",
     "ember-cli-babel": "^6.16.0",
     "ember-cli-htmlbars": "^3.0.0"
   },
