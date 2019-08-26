@@ -1,6 +1,7 @@
 import Component from '@ember/component'
 import { inject as service } from '@ember/service'
 import layout from '../templates/components/breadcrumbs-item'
+import { readOnly } from '@ember/object/computed'
 
 export default Component.extend({
   /**
@@ -14,5 +15,11 @@ export default Component.extend({
    */
 
   layout,
-  tagName: ''
+  tagName: '',
+
+  /**
+   * Computed
+   */
+
+  breadcrumbContainers: readOnly('breadcrumbsService.containers')
 })

@@ -18,7 +18,7 @@ module('Integration | Component | breadcrumbs', function (hooks) {
       <Breadcrumbs class="class-name-2" />
     `)
 
-    assert.ok(this.element.querySelector('.class-name-1'))
-    assert.ok(this.element.querySelector('.class-name-2'))
+    assert.dom('.class-name-1').exists()
+    assert.dom('.class-name-2').exists()
   })
 })

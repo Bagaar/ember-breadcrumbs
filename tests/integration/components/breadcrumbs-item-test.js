@@ -15,14 +15,12 @@ module('Integration | Component | breadcrumbs-item', function (hooks) {
       />
 
       <BreadcrumbsItem as |linkClass|>
-        {{link-to "Foo" "foo" class=linkClass}}
+        {{#link-to "foo" class=linkClass}}
+          Foo
+        {{/link-to}}
       </BreadcrumbsItem>
     `)
 
-    assert.ok(
-      this.element.querySelector(
-        '.class-name .item-class-name .link-class-name'
-      )
-    )
+    assert.dom('.class-name .item-class-name .link-class-name').exists()
   })
 })
