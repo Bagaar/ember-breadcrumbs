@@ -13,6 +13,7 @@ Template based breadcrumb management for Ember applications.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Usage Inside an Engine](#usage-inside-an-engine)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -146,6 +147,10 @@ const Eng = Engine.extend({
 ```
 
 **That's it! Now you should be able to leave behind breadcrumbs inside the engine and render them inside the host application.**
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
 ## License
 
