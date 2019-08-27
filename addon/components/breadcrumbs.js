@@ -21,17 +21,24 @@ export default Component.extend({
    */
 
   layout,
-  tagName: 'ul',
+  tagName: '',
+  containerData: null,
 
   /**
-   * Hooks
+   * Actions
    */
 
-  didInsertElement () {
-    this.get('breadcrumbsService.instances').addObject(this)
+  registerContainer (element) {
+    this.containerData = {
+      element,
+      itemClass: this.itemClass,
+      linkClass: this.linkClass
+    }
+
+    this.breadcrumbsService.registerContainer(this.containerData)
   },
 
-  willDestroyElement () {
-    this.get('breadcrumbsService.instances').removeObject(this)
+  unregisterContainer () {
+    this.breadcrumbsService.unregisterContainer(this.containerData)
   }
 })
