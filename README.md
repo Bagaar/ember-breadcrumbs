@@ -59,7 +59,7 @@ ember install @bagaar/ember-breadcrumbs
 </BreadcrumbsItem>
 ```
 
-> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `<Breadcrumbs />` component using Ember's `{{-in-element}}` component.
+> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `<Breadcrumbs />` component using Ember's `{{in-element}}` helper.
 
 #### Advantages
 

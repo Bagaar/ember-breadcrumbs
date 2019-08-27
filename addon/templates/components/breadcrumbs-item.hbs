@@ -1,7 +1,7 @@
 {{#each this.breadcrumbContainers as |container|}}
-  {{#-in-element container.element}}
+  {{#in-element container.element insertBefore=null}}
     <li class={{container.itemClass}} ...attributes>
       {{yield container.linkClass}}
     </li>
-  {{/-in-element}}
+  {{/in-element}}
 {{/each}}
