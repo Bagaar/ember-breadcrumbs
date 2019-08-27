@@ -4,7 +4,6 @@
   "description": "Template based breadcrumb management for Ember applications.",
   "keywords": [
     "bagaar",
-    "bgr",
     "breadcrumbs",
     "ember",
     "ember-addon"

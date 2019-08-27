@@ -13,6 +13,7 @@ Template based breadcrumb management for Ember applications.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Usage Inside an Engine](#usage-inside-an-engine)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -43,9 +44,9 @@ ember install @bagaar/ember-breadcrumbs
 {{! app/templates/foo.hbs }}
 
 <BreadcrumbsItem as |linkClass|>
-  {{#link-to "foo" class=linkClass}}
+  <LinkTo @route="foo" class={{linkClass}}>
     Foo
-  {{/link-to}}
+  </LinkTo>
 </BreadcrumbsItem>
 ```
 
@@ -53,20 +54,20 @@ ember install @bagaar/ember-breadcrumbs
 {{! app/templates/foo/bar.hbs }}
 
 <BreadcrumbsItem as |linkClass|>
-  {{#link-to "foo.bar" class=linkClass}}
+  <LinkTo @route="foo.bar" class={{linkClass}}>
     Bar
-  {{/link-to}}
+  </LinkTo>
 </BreadcrumbsItem>
 ```
 
-> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `{{link-to}}` component into all instances of the `<Breadcrumbs />` component using Ember's `{{in-element}}` helper.
+> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `<LinkTo />` component into all instances of the `<Breadcrumbs />` component using Ember's `{{in-element}}` helper.
 
 #### Advantages
 
 Leaving behind breadcrumbs like this might seem very verbose, but actually it's pretty flexible and has some advantages:
 
 1. Because you leave behind breadcrumbs inside templates, the addon doesn't have to take async model hooks into account.
-2. Because you use Ember's `{{link-to}}` component to define breadcrumb links, you have complete control over:
+2. Because you use Ember's `<LinkTo />` component to define breadcrumb links, you have complete control over:
    - **how you define them** (inline vs. block)
    - **how they should work** (route, dynamic segments, query parameters, ...)
    - **how they should look like** (text, icons, additional CSS class names, ...)
@@ -146,6 +147,10 @@ const Eng = Engine.extend({
 ```
 
 **That's it! Now you should be able to leave behind breadcrumbs inside the engine and render them inside the host application.**
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
 ## License
 
