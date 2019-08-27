@@ -23,4 +23,14 @@ module('Integration | Component | breadcrumbs-item', function (hooks) {
 
     assert.dom('.class-name .item-class-name .link-class-name').exists()
   })
+
+  test('it appends new breadcrumb items', async function (assert) {
+    await render(hbs`
+      <Breadcrumbs @itemClass="item-class-name" />
+      <BreadcrumbsItem />
+      <BreadcrumbsItem />
+    `)
+
+    assert.dom('.item-class-name').exists({ count: 2 })
+  })
 })

@@ -29,7 +29,8 @@
   "dependencies": {
     "@ember/render-modifiers": "^1.0.0",
     "ember-cli-babel": "^6.16.0",
-    "ember-cli-htmlbars": "^3.0.0"
+    "ember-cli-htmlbars": "^3.0.0",
+    "ember-in-element-polyfill": "^0.2.0"
   },
   "devDependencies": {
     "@bagaar/eslint-config-ember": "^0.5.0",
