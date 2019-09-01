@@ -5,10 +5,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['ember'],
-  extends: [
-    'plugin:ember/recommended',
-    '@bagaar/eslint-config-ember'
-  ],
+  extends: ['plugin:ember/recommended', '@bagaar/eslint-config-ember'],
   env: {
     browser: true
   },
@@ -17,6 +14,7 @@ module.exports = {
     // node files
     {
       files: [
+        '.eslintrc.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
         'index.js',
@@ -32,8 +30,7 @@ module.exports = {
         'tests/dummy/app/**'
       ],
       parserOptions: {
-        sourceType: 'script',
-        ecmaVersion: 2015
+        sourceType: 'script'
       },
       env: {
         browser: false,
