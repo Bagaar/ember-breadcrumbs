@@ -1,4 +1,5 @@
 import Component from '@ember/component'
+import { action } from '@ember/object'
 import { inject as service } from '@ember/service'
 import layout from '../templates/components/breadcrumbs'
 
@@ -28,7 +29,7 @@ export default Component.extend({
    * Actions
    */
 
-  registerContainer (element) {
+  registerContainer: action(function (element) {
     this.containerData = {
       element,
       itemClass: this.itemClass,
@@ -36,9 +37,9 @@ export default Component.extend({
     }
 
     this.breadcrumbsService.registerContainer(this.containerData)
-  },
+  }),
 
-  unregisterContainer () {
+  unregisterContainer: action(function () {
     this.breadcrumbsService.unregisterContainer(this.containerData)
-  }
+  })
 })

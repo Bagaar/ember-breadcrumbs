@@ -1,8 +1,7 @@
 <ul
-  {{did-insert (action this.registerContainer)}}
-  {{will-destroy (action this.unregisterContainer)}}
+  {{did-insert this.registerContainer}}
+  {{will-destroy this.unregisterContainer}}
   ...attributes
 >
   {{yield}}
 </ul>
-
