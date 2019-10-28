@@ -10,11 +10,18 @@ Template based breadcrumb management for Ember applications.
 
 ## Table of Contents
 
+- [Support](#support)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Usage Inside an Engine](#usage-inside-an-engine)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Support
+
+**`@bagaar/ember-breadcrumbs` supports Ember v3.4 and up.**
+
+Usage with older versions *might* work but is not tested and also requires the [ember-angle-bracket-invocation-polyfill](https://github.com/rwjblue/ember-angle-bracket-invocation-polyfill) addon to be installed.
 
 ## Installation
 
