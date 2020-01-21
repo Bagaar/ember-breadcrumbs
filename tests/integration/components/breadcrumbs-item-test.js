@@ -8,7 +8,7 @@ module('Integration | Component | breadcrumbs-item', function (hooks) {
 
   test('it renders the correct class names', async function (assert) {
     await render(hbs`
-      <Breadcrumbs
+      <BreadcrumbsContainer
         class="class-name"
         @itemClass="item-class-name"
         @linkClass="link-class-name"
@@ -26,7 +26,7 @@ module('Integration | Component | breadcrumbs-item', function (hooks) {
 
   test('it appends new breadcrumb items', async function (assert) {
     await render(hbs`
-      <Breadcrumbs @itemClass="item-class-name" />
+      <BreadcrumbsContainer @itemClass="item-class-name" />
       <BreadcrumbsItem />
       <BreadcrumbsItem />
     `)

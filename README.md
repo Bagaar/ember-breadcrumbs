@@ -36,14 +36,14 @@ ember install @bagaar/ember-breadcrumbs
 ```handlebars
 {{! app/templates/application.hbs }}
 
-<Breadcrumbs
+<BreadcrumbsContainer
   class="breadcrumbs"
   @itemClass="breadcrumbs__item"
   @linkClass="breadcrumbs__link"
 />
 ```
 
-> **NOTE:** It's also possible to render multiple instances of the `<Breadcrumbs />` component.
+> **NOTE:** It's also possible to render multiple instances of the `<BreadcrumbsContainer />` component.
 
 ### 2\. Leaving Behind Breadcrumbs
 
@@ -67,7 +67,7 @@ ember install @bagaar/ember-breadcrumbs
 </BreadcrumbsItem>
 ```
 
-> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `<LinkTo />` component into all instances of the `<Breadcrumbs />` component using Ember's `{{in-element}}` helper.
+> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `<LinkTo />` component into all instances of the `<BreadcrumbsContainer />` component using Ember's `{{in-element}}` helper.
 
 #### Advantages
 
@@ -98,7 +98,7 @@ The rendered output will be:
 
 The addon doesn't ship with default styling. This should be done inside the consuming project.
 
-### 4\. `<Breadcrumbs />` arguments
+### 4\. `<BreadcrumbsContainer />` arguments
 
 Name          | Description                                                                      | Type   
 :-------------| :------------------------------------------------------------------------------- | :----- 
