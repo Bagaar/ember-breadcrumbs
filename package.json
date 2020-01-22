@@ -32,8 +32,8 @@
     "ember-in-element-polyfill": "^0.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@ember/optional-features": "^1.0.0",
     "babel-eslint": "^10.0.3",
     "broccoli-asset-rev": "^3.0.0",
@@ -64,7 +64,7 @@
     "loader.js": "^4.7.0",
     "prettier-standard": "^15.0.1",
     "qunit-dom": "^0.9.0",
-    "standard-version": "^7.0.0"
+    "standard-version": "^7.0.1"
   },
   "engines": {
     "node": "8.* || >= 10.*"
