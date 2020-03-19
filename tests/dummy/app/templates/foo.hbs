@@ -1,5 +1,7 @@
 <BreadcrumbsItem as |linkClass|>
-  {{link-to "Foo" "foo" class=linkClass}}
+  <LinkTo @route="foo" class={{linkClass}}>
+    Foo
+  </LinkTo>
 </BreadcrumbsItem>
 
 {{outlet}}
