@@ -2,7 +2,9 @@ Breadcrumbs 2:
 <BreadcrumbsContainer />
 
 <BreadcrumbsItem as |linkClass|>
-  {{link-to "Baz" "foo.bar.baz" class=linkClass}}
+  <LinkTo @route="foo.bar.baz" class={{linkClass}}>
+    Baz
+  </LinkTo>
 </BreadcrumbsItem>
 
 {{outlet}}
