@@ -9,7 +9,7 @@ module('Integration | Component | breadcrumbs-container', function (hooks) {
   test('it renders the correct base class name', async function (assert) {
     await render(hbs`<BreadcrumbsContainer class="class-name" />`)
 
-    assert.ok(this.element.querySelector('.class-name'))
+    assert.dom('.class-name').exists()
   })
 
   test('it renders multiple instances with the correct base class name', async function (assert) {
