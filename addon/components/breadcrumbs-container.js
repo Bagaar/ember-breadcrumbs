@@ -1,44 +1,26 @@
-import Component from '@ember/component'
+import { action } from '@ember/object'
 import { inject as service } from '@ember/service'
-import layout from '../templates/components/breadcrumbs-container'
+import Component from '@glimmer/component'
 
-export default Component.extend({
-  /**
-   * Services
-   */
+export default class BreadcrumbsContainerComponent extends Component {
+  @service('breadcrumbs') breadcrumbsService
 
-  breadcrumbsService: service('breadcrumbs'),
+  container = null
 
-  /**
-   * Arguments
-   */
-
-  itemClass: null,
-  linkClass: null,
-
-  /**
-   * State
-   */
-
-  layout,
-  tagName: '',
-  containerData: null,
-
-  /**
-   * Actions
-   */
-
+  @action
   registerContainer (element) {
-    this.containerData = {
+    const { itemClass, linkClass } = this.args
+
+    this.container = {
       element,
-      itemClass: this.itemClass,
-      linkClass: this.linkClass
+      itemClass,
+      linkClass
     }
 
-    this.breadcrumbsService.registerContainer(this.containerData)
-  },
-
-  unregisterContainer () {
-    this.breadcrumbsService.unregisterContainer(this.containerData)
+    this.breadcrumbsService.registerContainer(this.container)
   }
-})
+
+  willDestroy () {
+    this.breadcrumbsService.unregisterContainer(this.container)
+  }
+}

@@ -1,52 +1,43 @@
-import Service from '@ember/service'
 import { assert } from '@ember/debug'
+import Service from '@ember/service'
+import { tracked } from '@glimmer/tracking'
 
-export default Service.extend({
-  /**
-   * State
-   */
+export default class BreadcrumbsService extends Service {
+  @tracked containers = []
 
-  containers: null,
-
-  /**
-   * Hooks
-   */
-
-  init () {
-    this._super(...arguments)
-
-    this.containers = []
-  },
-
-  /**
-   * Methods
-   */
-
-  registerContainer (containerData) {
+  registerContainer (container) {
     assert(
-      'An `element` is required to register a breadcrumb container',
-      containerData.element
+      'A DOM element is required to register a breadcrumb container.',
+      container.element
     )
+
     assert(
-      'This container was already registered before',
-      !this._isContainerRegistered(containerData)
+      'A breadcrumb container with the same DOM element has already been registered before.',
+      !this.isContainerRegistered(container)
     )
 
-    this.set('containers', [...this.containers, containerData])
-  },
+    this.containers = [...this.containers, container]
+  }
 
-  unregisterContainer ({ element }) {
-    this.set(
-      'containers',
-      this.containers.filter(registeredContainer => {
-        return element !== registeredContainer.element
-      })
+  unregisterContainer (container) {
+    assert(
+      'A DOM element is required to unregister a breadcrumb container.',
+      container.element
     )
-  },
 
-  _isContainerRegistered ({ element }) {
-    return this.containers.some(registeredContainer => {
-      return element === registeredContainer.element
+    assert(
+      'No breadcrumb container was found with this DOM element.',
+      this.isContainerRegistered(container)
+    )
+
+    this.containers = this.containers.filter(registeredContainer => {
+      return container.element !== registeredContainer.element
     })
   }
-})
+
+  isContainerRegistered (container) {
+    return this.containers.some(registeredContainer => {
+      return container.element === registeredContainer.element
+    })
+  }
+}

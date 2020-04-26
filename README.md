@@ -19,9 +19,9 @@ Template based breadcrumb management for Ember applications.
 
 ## Support
 
-**`@bagaar/ember-breadcrumbs` supports Ember v3.4 and up.**
+**`@bagaar/ember-breadcrumbs` supports Ember v3.16 and up.**
 
-Usage with older versions *might* work but is not tested and also requires the [ember-angle-bracket-invocation-polyfill](https://github.com/rwjblue/ember-angle-bracket-invocation-polyfill) addon to be installed.
+For a version that is compatible with older versions of Ember, check out the [v1.X](https://github.com/Bagaar/ember-breadcrumbs/tree/v1.X) branch.
 
 ## Installation
 
@@ -126,9 +126,9 @@ This will make sure that the same instance of the `breadcrumbs` service is used 
 ```javascript
 // app/app.js
 
-const App = Application.extend({
+export default class App extends Application {
   // ...
-  engines: {
+  engines = {
     engineName: {
       dependencies: {
         services: [
@@ -137,20 +137,20 @@ const App = Application.extend({
       }
     }
   }
-});
+}
 ```
 
 ```javascript
 // lib/engine-name/addon/engine.js
 
-const Eng = Engine.extend({
+export default Engine.extend({
   // ...
   dependencies: {
     services: [
       'breadcrumbs'
     ]
   }
-});
+})
 ```
 
 **That's it! Now you should be able to leave behind breadcrumbs inside the engine and render them inside the host application.**
