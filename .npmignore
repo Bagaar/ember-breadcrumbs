@@ -7,6 +7,7 @@
 
 # misc
 /.bowerrc
+/.commitlintrc.js
 /.editorconfig
 /.ember-cli
 /.env*
