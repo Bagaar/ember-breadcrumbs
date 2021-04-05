@@ -29,6 +29,11 @@
     "test:ember-compatibility": "ember try:each",
     "release": "standard-version"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "@ember/render-modifiers": "^1.0.2",
     "@glimmer/component": "^1.0.3",
@@ -81,10 +86,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
