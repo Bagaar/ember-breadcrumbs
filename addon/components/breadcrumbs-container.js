@@ -1,26 +1,28 @@
-import { action } from '@ember/object'
-import { inject as service } from '@ember/service'
-import Component from '@glimmer/component'
+import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
+import Component from '@glimmer/component';
 
 export default class BreadcrumbsContainerComponent extends Component {
-  @service('breadcrumbs') breadcrumbsService
+  @service('breadcrumbs') breadcrumbsService;
 
-  container = null
+  container = null;
 
   @action
-  registerContainer (element) {
-    const { itemClass, linkClass } = this.args
+  registerContainer(element) {
+    const { itemClass, linkClass } = this.args;
 
     this.container = {
       element,
       itemClass,
-      linkClass
-    }
+      linkClass,
+    };
 
-    this.breadcrumbsService.registerContainer(this.container)
+    this.breadcrumbsService.registerContainer(this.container);
   }
 
-  willDestroy () {
-    this.breadcrumbsService.unregisterContainer(this.container)
+  willDestroy() {
+    super.willDestroy(...arguments);
+
+    this.breadcrumbsService.unregisterContainer(this.container);
   }
 }

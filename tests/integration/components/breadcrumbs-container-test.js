@@ -1,40 +1,40 @@
-import { render } from '@ember/test-helpers'
-import { setupRenderingTest } from 'ember-qunit'
-import hbs from 'htmlbars-inline-precompile'
-import { module, test } from 'qunit'
+import { render } from '@ember/test-helpers';
+import { setupRenderingTest } from 'ember-qunit';
+import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
 
 module('Integration | Component | breadcrumbs-container', function (hooks) {
-  setupRenderingTest(hooks)
+  setupRenderingTest(hooks);
 
   test('it registers/unregisters', async function (assert) {
-    const breadcrumbsService = this.owner.lookup('service:breadcrumbs')
+    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
 
     await render(hbs`
       <BreadcrumbsContainer />
-    `)
+    `);
 
-    assert.equal(breadcrumbsService.containers.length, 1)
+    assert.equal(breadcrumbsService.containers.length, 1);
 
-    await render(hbs``)
+    await render(hbs``);
 
-    assert.equal(breadcrumbsService.containers.length, 0)
-  })
+    assert.equal(breadcrumbsService.containers.length, 0);
+  });
 
   test('it renders the correct base class name', async function (assert) {
     await render(hbs`
       <BreadcrumbsContainer class="class-name" />
-    `)
+    `);
 
-    assert.dom('.class-name').exists()
-  })
+    assert.dom('.class-name').exists();
+  });
 
   test('it renders multiple instances with the correct base class name', async function (assert) {
     await render(hbs`
       <BreadcrumbsContainer class="class-name-1" />
       <BreadcrumbsContainer class="class-name-2" />
-    `)
+    `);
 
-    assert.dom('.class-name-1').exists()
-    assert.dom('.class-name-2').exists()
-  })
-})
+    assert.dom('.class-name-1').exists();
+    assert.dom('.class-name-2').exists();
+  });
+});
