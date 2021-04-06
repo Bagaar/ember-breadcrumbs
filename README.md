@@ -1,6 +1,5 @@
 # Ember Breadcrumbs
 
-[![Build Status](https://travis-ci.com/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.com/Bagaar/ember-breadcrumbs)
 [![NPM Version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs)
 [![Ember Observer Score](https://emberobserver.com/badges/-bagaar-ember-breadcrumbs.svg)](https://emberobserver.com/addons/@bagaar/ember-breadcrumbs)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
