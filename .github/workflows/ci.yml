@@ -13,7 +13,7 @@
 # not change them. Doing so could break upgrade flow.
 #
 #$ browsers:
-#$   - Chrome
+#$   - chrome
 #$ emberTryScenarios:
 #$   - scenario: ember-lts-3.20
 #$     allowedToFail: false
@@ -24,12 +24,12 @@
 #$   - scenario: ember-beta
 #$     allowedToFail: false
 #$   - scenario: ember-canary
-#$     allowedToFail: false
+#$     allowedToFail: true
 #$   - scenario: ember-default-with-jquery
 #$     allowedToFail: false
 #$   - scenario: ember-classic
 #$     allowedToFail: false
-#$ nodeVersion: '10'
+#$ nodeVersion: 10.x
 #$ packageManager: yarn
 #
 
@@ -42,7 +42,7 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: '10'
+  NODE_VERSION: '10.x'
 
 jobs:
   lint:
@@ -91,7 +91,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        browser: [Chrome]
+        browser: [chrome]
 
     steps:
     - uses: actions/checkout@v2
@@ -136,7 +136,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        browser: [Chrome]
+        browser: [chrome]
 
     steps:
     - uses: actions/checkout@v2
@@ -183,12 +183,13 @@ jobs:
           ember-lts-3.24,
           ember-release,
           ember-beta,
-          ember-canary,
           ember-default-with-jquery,
           ember-classic
         ]
         allow-failure: [false]
         include:
+          - ember-try-scenario: ember-canary
+            allow-failure: true
 
     steps:
     - uses: actions/checkout@v2
