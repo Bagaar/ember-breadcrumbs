@@ -20,7 +20,7 @@ Template based breadcrumb management for Ember applications.
 
 ## Support
 
-**`@bagaar/ember-breadcrumbs` supports Ember v3.20 and up.**
+**`@bagaar/ember-breadcrumbs` supports Ember v3.16 and up.**
 
 For a version that is compatible with older versions of Ember, check out [v1.0.0](https://github.com/Bagaar/ember-breadcrumbs/tree/v1.0.0).
 
