@@ -1,9 +1,0 @@
-{{!-- template-lint-disable no-action --}}
-
-<ul
-  {{did-insert (action this.registerContainer)}}
-  {{will-destroy (action this.unregisterContainer)}}
-  ...attributes
->
-  {{yield}}
-</ul>

@@ -1,10 +1,10 @@
-# Bagaar Ember Breadcrumbs
+# Ember Breadcrumbs
 
-![Bagaar Logo](https://bagaar.be/hubfs/logo-bagaar-black.svg)
-
-**`@bagaar/ember-breadcrumbs` is built and maintained by [Bagaar](https://bagaar.be).**
-
-[![NPM Version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs) [![Build Status](https://travis-ci.com/Bagaar/ember-breadcrumbs.svg?branch=master)](https://travis-ci.com/Bagaar/ember-breadcrumbs) [![Ember Observer Score](https://emberobserver.com/badges/-bagaar-ember-breadcrumbs.svg)](https://emberobserver.com/addons/@bagaar/ember-breadcrumbs) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![CI](https://github.com/Bagaar/ember-breadcrumbs/workflows/CI/badge.svg)](https://github.com/Bagaar/ember-breadcrumbs/actions?query=workflow%3ACI)
+[![NPM Version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs)
+[![Ember Observer Score](https://emberobserver.com/badges/-bagaar-ember-breadcrumbs.svg)](https://emberobserver.com/addons/@bagaar/ember-breadcrumbs)
+[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 Template based breadcrumb management for Ember applications.
 
@@ -16,12 +16,13 @@ Template based breadcrumb management for Ember applications.
 - [Usage Inside an Engine](#usage-inside-an-engine)
 - [Contributing](#contributing)
 - [License](#license)
+- [Maintenance](#maintenance)
 
 ## Support
 
-**`@bagaar/ember-breadcrumbs` supports Ember v3.4 and up.**
+**`@bagaar/ember-breadcrumbs` supports Ember v3.20 and up.**
 
-Usage with older versions *might* work but is not tested and also requires the [ember-angle-bracket-invocation-polyfill](https://github.com/rwjblue/ember-angle-bracket-invocation-polyfill) addon to be installed.
+For a version that is compatible with older versions of Ember, check out [v1.0.0](https://github.com/Bagaar/ember-breadcrumbs/tree/v1.0.0).
 
 ## Installation
 
@@ -37,9 +38,9 @@ ember install @bagaar/ember-breadcrumbs
 {{! app/templates/application.hbs }}
 
 <BreadcrumbsContainer
-  class="breadcrumbs"
   @itemClass="breadcrumbs__item"
   @linkClass="breadcrumbs__link"
+  class="breadcrumbs"
 />
 ```
 
@@ -71,9 +72,9 @@ ember install @bagaar/ember-breadcrumbs
 
 #### Advantages
 
-Leaving behind breadcrumbs like this might seem very verbose, but actually it's pretty flexible and has some advantages:
+Leaving behind breadcrumbs like this might seem very verbose, but it's actually pretty flexible and has some advantages:
 
-1. Because you leave behind breadcrumbs inside templates, the addon doesn't have to take async model hooks into account.
+1. Because you leave behind breadcrumbs inside templates, the addon doesn't have to take async model hooks into account
 2. Because you use Ember's `<LinkTo />` component to define breadcrumb links, you have complete control over:
    - **how you define them** (inline vs. block)
    - **how they should work** (route, dynamic segments, query parameters, ...)
@@ -96,14 +97,14 @@ The rendered output will be:
 
 ### 3\. Styling the Breadcrumbs
 
-The addon doesn't ship with default styling. This should be done inside the consuming project.
+The addon doesn't ship with default styling, this should be done inside the consuming project.
 
 ### 4\. `<BreadcrumbsContainer />` arguments
 
-Name          | Description                                                                      | Type   
-:-------------| :------------------------------------------------------------------------------- | :----- 
-**itemClass** | The class(es) that will be added to all child `<BreadcrumbsItem />` components   | String 
-**linkClass** | The class(es) that will be yielded to the `<BreadcrumbsItem />`'s block content  | String 
+Name          | Description                                                                 | Type
+:-------------| :---------------------------------------------------------------------------| :-----
+**itemClass** | The class that will be added to all `<BreadcrumbsItem />` components        | String
+**linkClass** | The class that will be yielded to the `<BreadcrumbsItem />`'s block content | String
 
 ## Usage Inside an Engine
 
@@ -121,36 +122,30 @@ This will make all `@bagaar/ember-breadcrumbs` components available inside the e
 
 ### 2\. Make the `breadcrumbs` Service Available Inside the Engine
 
-This will make sure that the same instance of the `breadcrumbs` service is used inside the engine as inside the host application.
+This will make sure that the same instance of the `breadcrumbs` service is used inside the engine and inside the host application.
 
 ```javascript
 // app/app.js
 
-const App = Application.extend({
-  // ...
-  engines: {
+export default class App extends Application {
+  engines = {
     engineName: {
       dependencies: {
-        services: [
-          'breadcrumbs'
-        ]
-      }
-    }
-  }
-});
+        services: ['breadcrumbs'],
+      },
+    },
+  };
+}
 ```
 
 ```javascript
 // lib/engine-name/addon/engine.js
 
-const Eng = Engine.extend({
-  // ...
-  dependencies: {
-    services: [
-      'breadcrumbs'
-    ]
-  }
-});
+export default class EngineName extends Engine {
+  dependencies = {
+    services: ['breadcrumbs'],
+  };
+}
 ```
 
 **That's it! Now you should be able to leave behind breadcrumbs inside the engine and render them inside the host application.**
@@ -162,3 +157,9 @@ See the [Contributing](./CONTRIBUTING.md) guide for details.
 ## License
 
 This project is licensed under the [MIT License](./LICENSE.md).
+
+## Maintenance
+
+**`@bagaar/ember-breadcrumbs` is built and maintained by [Bagaar](https://bagaar.be).**
+
+![Bagaar Logo](https://bagaar.be/hubfs/logo-bagaar-black.svg)

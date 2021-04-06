@@ -1,1 +1,1 @@
-export { default } from '@bagaar/ember-breadcrumbs/components/breadcrumbs-item'
+export { default } from '@bagaar/ember-breadcrumbs/components/breadcrumbs-item';

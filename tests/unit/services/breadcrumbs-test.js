@@ -1,61 +1,42 @@
-import { module, test } from 'qunit'
-import { setupTest } from 'ember-qunit'
+import { setupTest } from 'ember-qunit';
+import { module, test } from 'qunit';
 
 module('Unit | Service | breadcrumbs', function (hooks) {
-  setupTest(hooks)
+  setupTest(hooks);
 
-  test('it can register new breadcrumb containers', function (assert) {
-    const service = this.owner.lookup('service:breadcrumbs')
+  test('it registers/unregisters breadcrumb containers', function (assert) {
+    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    const container = getDummyContainer();
 
-    assert.equal(service.containers.length, 0)
+    breadcrumbsService.registerContainer(container);
+    assert.equal(breadcrumbsService.containers.length, 1);
 
-    const containerData = getDummyContainerData()
+    breadcrumbsService.unregisterContainer(container);
+    assert.equal(breadcrumbsService.containers.length, 0);
+  });
 
-    service.registerContainer(containerData)
-    assert.equal(service.containers.length, 1)
-    assert.equal(service.containers[0], containerData)
-
-    const secondContainerData = getDummyContainerData()
-
-    service.registerContainer(secondContainerData)
-    assert.equal(service.containers.length, 2)
-    assert.equal(service.containers[1], secondContainerData)
-  })
-
-  test('it throws an error when trying to register the same container multiple times', function (assert) {
-    const service = this.owner.lookup('service:breadcrumbs')
-
-    const containerData = getDummyContainerData()
-
-    service.registerContainer(containerData)
+  test('it throws when no DOM element is provided', function (assert) {
+    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
 
     assert.throws(function () {
-      service.registerContainer(containerData)
-    })
-  })
+      breadcrumbsService.registerContainer({});
+    });
+  });
 
-  test('it throws an error if no element is provided', function (assert) {
-    const service = this.owner.lookup('service:breadcrumbs')
+  test('it throws when registering the same breadcrumb container twice', function (assert) {
+    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    const container = getDummyContainer();
+
+    breadcrumbsService.registerContainer(container);
 
     assert.throws(function () {
-      const invalidContainerData = {}
-      service.registerContainer(invalidContainerData)
-    })
-  })
+      breadcrumbsService.registerContainer(container);
+    });
+  });
+});
 
-  test('it can unregister containers', function (assert) {
-    const service = this.owner.lookup('service:breadcrumbs')
-
-    const containerData = getDummyContainerData
-    service.containers.push(containerData)
-
-    service.unregisterContainer(containerData)
-    assert.equal(service.containers.length, 0)
-  })
-})
-
-function getDummyContainerData () {
+function getDummyContainer() {
   return {
-    element: document.createElement('div')
-  }
+    element: document.createElement('div'),
+  };
 }
