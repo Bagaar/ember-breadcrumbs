@@ -1,5 +1,6 @@
 # Ember Breadcrumbs
 
+[![CI](https://github.com/Bagaar/ember-breadcrumbs/workflows/CI/badge.svg)](https://github.com/Bagaar/ember-breadcrumbs/actions?query=workflow%3ACI)
 [![NPM Version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs)
 [![Ember Observer Score](https://emberobserver.com/badges/-bagaar-ember-breadcrumbs.svg)](https://emberobserver.com/addons/@bagaar/ember-breadcrumbs)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
