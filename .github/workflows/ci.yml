@@ -13,25 +13,19 @@
 # not change them. Doing so could break upgrade flow.
 #
 #$ browsers:
-#$   - chrome
+#$   - Chrome
 #$ emberTryScenarios:
 #$   - scenario: ember-lts-3.16
-#$     allowedToFail: false
 #$   - scenario: ember-lts-3.20
-#$     allowedToFail: false
 #$   - scenario: ember-lts-3.24
-#$     allowedToFail: false
 #$   - scenario: ember-release
-#$     allowedToFail: false
 #$   - scenario: ember-beta
-#$     allowedToFail: false
 #$   - scenario: ember-canary
-#$     allowedToFail: true
 #$   - scenario: ember-default-with-jquery
-#$     allowedToFail: false
 #$   - scenario: ember-classic
-#$     allowedToFail: false
-#$ nodeVersion: 10.x
+#$   - scenario: embroider-safe
+#$   - scenario: embroider-optimized
+#$ nodeVersion: '10'
 #$ packageManager: yarn
 #
 
@@ -44,7 +38,7 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: '10.x'
+  NODE_VERSION: '10'
 
 jobs:
   lint:
@@ -93,7 +87,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        browser: [chrome]
+        browser: [Chrome]
 
     steps:
     - uses: actions/checkout@v2
@@ -138,7 +132,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        browser: [chrome]
+        browser: [Chrome]
 
     steps:
     - uses: actions/checkout@v2
@@ -174,7 +168,7 @@ jobs:
   try-scenarios:
     name: Tests - ${{ matrix.ember-try-scenario }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.allow-failure }}
+    continue-on-error: true
     needs: test
 
     strategy:
@@ -186,13 +180,12 @@ jobs:
           ember-lts-3.24,
           ember-release,
           ember-beta,
+          ember-canary,
           ember-default-with-jquery,
-          ember-classic
+          ember-classic,
+          embroider-safe,
+          embroider-optimized
         ]
-        allow-failure: [false]
-        include:
-          - ember-try-scenario: ember-canary
-            allow-failure: true
 
     steps:
     - uses: actions/checkout@v2
