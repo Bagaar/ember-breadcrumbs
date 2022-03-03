@@ -129,7 +129,7 @@ This will make sure that the same instance of the `breadcrumbs` service is used 
 
 export default class App extends Application {
   engines = {
-    engineName: {
+    'engine-name': {
       dependencies: {
         services: ['breadcrumbs'],
       },
