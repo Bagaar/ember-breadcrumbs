@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v1.0.0...v2.0.0) (2022-03-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for Ember versions below v3.20
+* remove support for Ember v3.16
+* switch to native classes and Glimmer components
+
+* drop support for Ember versions below v3.20 ([b0a0527](https://github.com/Bagaar/ember-breadcrumbs/commit/b0a0527bf41838db32a562e083effbf0f694bdab))
+* remove support for Ember v3.16 ([709d32d](https://github.com/Bagaar/ember-breadcrumbs/commit/709d32d22f23cb84dd0a87da2c37c4279d81fe16))
+* switch to native classes and Glimmer components ([1ffc3b6](https://github.com/Bagaar/ember-breadcrumbs/commit/1ffc3b67787d56f72a6a639f1adfdd871f36e874))
+
 ## [1.0.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v1.0.0-beta.1...v1.0.0) (2021-04-05)
 
 ## [1.0.0-beta.3](https://github.com/Bagaar/ember-breadcrumbs/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2020-05-18)
