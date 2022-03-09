@@ -9,10 +9,10 @@ module('Unit | Service | breadcrumbs', function (hooks) {
     const container = getDummyContainer();
 
     breadcrumbsService.registerContainer(container);
-    assert.equal(breadcrumbsService.containers.length, 1);
+    assert.strictEqual(breadcrumbsService.containers.length, 1);
 
     breadcrumbsService.unregisterContainer(container);
-    assert.equal(breadcrumbsService.containers.length, 0);
+    assert.strictEqual(breadcrumbsService.containers.length, 0);
   });
 
   test('it throws when no DOM element is provided', function (assert) {
