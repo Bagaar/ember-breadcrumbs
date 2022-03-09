@@ -13,11 +13,11 @@ module('Integration | Component | breadcrumbs-container', function (hooks) {
       <BreadcrumbsContainer />
     `);
 
-    assert.equal(breadcrumbsService.containers.length, 1);
+    assert.strictEqual(breadcrumbsService.containers.length, 1);
 
     await render(hbs``);
 
-    assert.equal(breadcrumbsService.containers.length, 0);
+    assert.strictEqual(breadcrumbsService.containers.length, 0);
   });
 
   test('it renders the correct base class name', async function (assert) {
