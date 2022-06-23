@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v2.0.0...v3.0.0) (2022-06-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for Ember v3.20
+* drop support for Node v12
+
+### Features
+
+* use `ember-modifier` instead of `@ember/render-modifiers` ([631a46c](https://github.com/Bagaar/ember-breadcrumbs/commit/631a46c1e2052b4c33854826df467172bb18b3c8))
+
+
+* drop support for Ember v3.20 ([a4d5747](https://github.com/Bagaar/ember-breadcrumbs/commit/a4d5747f1e0b4838f3918b7b42de71db5260a886))
+* drop support for Node v12 ([ff7fbb3](https://github.com/Bagaar/ember-breadcrumbs/commit/ff7fbb3f44f9d7a14b61dbbffbb086a301f52012))
+
 ## [2.0.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v1.0.0...v2.0.0) (2022-03-09)
 
 
