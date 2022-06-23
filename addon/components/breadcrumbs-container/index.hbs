@@ -1,3 +1,6 @@
-<ul {{did-insert this.registerContainer}} ...attributes>
+<ul
+  {{breadcrumbs-container itemClass=@itemClass linkClass=@linkClass}}
+  ...attributes
+>
   {{yield}}
 </ul>

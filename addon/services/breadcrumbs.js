@@ -5,6 +5,8 @@ import { tracked } from '@glimmer/tracking';
 export default class BreadcrumbsService extends Service {
   @tracked containers = [];
 
+  _containers = [];
+
   registerContainer(container) {
     assert(
       'A DOM element is required to register a breadcrumb container.',
@@ -16,7 +18,9 @@ export default class BreadcrumbsService extends Service {
       !this.isContainerRegistered(container)
     );
 
-    this.containers = [...this.containers, container];
+    this._containers = [...this._containers, container];
+
+    this.containers = this._containers;
   }
 
   unregisterContainer(container) {
@@ -30,13 +34,15 @@ export default class BreadcrumbsService extends Service {
       this.isContainerRegistered(container)
     );
 
-    this.containers = this.containers.filter((registeredContainer) => {
+    this._containers = this._containers.filter((registeredContainer) => {
       return container.element !== registeredContainer.element;
     });
+
+    this.containers = this._containers;
   }
 
   isContainerRegistered(container) {
-    return this.containers.some((registeredContainer) => {
+    return this._containers.some((registeredContainer) => {
       return container.element === registeredContainer.element;
     });
   }
