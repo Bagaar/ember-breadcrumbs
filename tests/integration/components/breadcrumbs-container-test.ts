@@ -1,3 +1,4 @@
+import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'dummy/tests/helpers';
 import hbs from 'htmlbars-inline-precompile';
@@ -7,7 +8,9 @@ module('Integration | Component | breadcrumbs-container', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it registers/unregisters', async function (assert) {
-    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    const breadcrumbsService = this.owner.lookup(
+      'service:breadcrumbs'
+    ) as BreadcrumbsService;
 
     await render(hbs`
       <BreadcrumbsContainer />
