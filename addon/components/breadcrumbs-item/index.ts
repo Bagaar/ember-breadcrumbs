@@ -1,6 +1,7 @@
+import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 
 export default class BreadcrumbsItemComponent extends Component {
-  @service('breadcrumbs') breadcrumbsService;
+  @service('breadcrumbs') declare breadcrumbsService: BreadcrumbsService;
 }

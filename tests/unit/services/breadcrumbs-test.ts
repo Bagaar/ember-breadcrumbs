@@ -1,3 +1,5 @@
+import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
+import type { Container } from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
 import { setupTest } from 'dummy/tests/helpers';
 import { module, test } from 'qunit';
 
@@ -5,7 +7,10 @@ module('Unit | Service | breadcrumbs', function (hooks) {
   setupTest(hooks);
 
   test('it registers/unregisters breadcrumb containers', function (assert) {
-    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    const breadcrumbsService = this.owner.lookup(
+      'service:breadcrumbs'
+    ) as BreadcrumbsService;
+
     const container = getDummyContainer();
 
     breadcrumbsService.registerContainer(container);
@@ -15,16 +20,11 @@ module('Unit | Service | breadcrumbs', function (hooks) {
     assert.strictEqual(breadcrumbsService.containers.length, 0);
   });
 
-  test('it throws when no DOM element is provided', function (assert) {
-    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
-
-    assert.throws(function () {
-      breadcrumbsService.registerContainer({});
-    });
-  });
-
   test('it throws when registering the same breadcrumb container twice', function (assert) {
-    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    const breadcrumbsService = this.owner.lookup(
+      'service:breadcrumbs'
+    ) as BreadcrumbsService;
+
     const container = getDummyContainer();
 
     breadcrumbsService.registerContainer(container);
@@ -35,8 +35,10 @@ module('Unit | Service | breadcrumbs', function (hooks) {
   });
 });
 
-function getDummyContainer() {
+function getDummyContainer(): Container {
   return {
-    element: document.createElement('div'),
+    element: document.createElement('ul'),
+    itemClass: '',
+    linkClass: '',
   };
 }
