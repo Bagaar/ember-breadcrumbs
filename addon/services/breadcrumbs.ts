@@ -4,8 +4,8 @@ import { tracked } from '@glimmer/tracking';
 
 export interface Container {
   element: HTMLUListElement;
-  itemClass: string;
-  linkClass: string;
+  itemClass?: string;
+  linkClass?: string;
 }
 
 export default class BreadcrumbsService extends Service {

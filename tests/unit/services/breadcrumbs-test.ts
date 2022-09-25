@@ -38,7 +38,5 @@ module('Unit | Service | breadcrumbs', function (hooks) {
 function getDummyContainer(): Container {
   return {
     element: document.createElement('ul'),
-    itemClass: '',
-    linkClass: '',
   };
 }
