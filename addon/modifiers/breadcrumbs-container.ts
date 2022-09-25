@@ -8,8 +8,8 @@ interface BreadcrumbsContainerModifierSignature {
   Element: HTMLUListElement;
   Args: {
     Named: {
-      itemClass: string;
-      linkClass: string;
+      itemClass?: string;
+      linkClass?: string;
     };
     Positional: [];
   };
