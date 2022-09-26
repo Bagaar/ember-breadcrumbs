@@ -29,6 +29,7 @@
 /testem.js
 /tsconfig.json
 /tests/
+/types/
 /yarn-error.log
 /yarn.lock
 .gitkeep
