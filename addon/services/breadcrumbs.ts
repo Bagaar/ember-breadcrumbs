@@ -3,9 +3,9 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export interface Container {
-  element: HTMLUListElement;
-  itemClass?: string;
-  linkClass?: string;
+  readonly element: HTMLUListElement;
+  readonly itemClass?: string;
+  readonly linkClass?: string;
 }
 
 export default class BreadcrumbsService extends Service {
