@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import templateOnlyComponent from '@ember/component/template-only';
 
 interface BreadcrumbsContainerComponentSignature {
   Args: {
@@ -11,5 +11,4 @@ interface BreadcrumbsContainerComponentSignature {
   Element: HTMLUListElement;
 }
 
-// eslint-disable-next-line ember/no-empty-glimmer-component-classes
-export default class BreadcrumbsContainerComponent extends Component<BreadcrumbsContainerComponentSignature> {}
+export default templateOnlyComponent<BreadcrumbsContainerComponentSignature>();
