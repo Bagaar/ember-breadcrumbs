@@ -42,6 +42,7 @@
     "ember-modifier": "^3.2.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.6",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@ember/optional-features": "^2.0.0",
