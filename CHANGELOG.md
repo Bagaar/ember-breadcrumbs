@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v3.0.0...v4.0.0) (2022-10-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to TypeScript
+
+### Features
+
+* add Glint types ([e638caf](https://github.com/Bagaar/ember-breadcrumbs/commit/e638cafc0484bbac025cd6dc2cb5b909465b8d5e))
+* migrate to TypeScript ([e3151f8](https://github.com/Bagaar/ember-breadcrumbs/commit/e3151f8f892e7f64b6a0dd07d09a8eadf93cbcc9))
+
 ## [3.0.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v2.0.0...v3.0.0) (2022-06-23)
 
 
