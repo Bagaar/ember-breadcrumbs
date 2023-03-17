@@ -1777,6 +1777,11 @@
   resolved "https://registry.yarnpkg.com/@types/ember__owner/-/ember__owner-4.0.0.tgz#2058a8fbf9636774dc79430abd355b07538c51d7"
   integrity sha512-7ZotJNCkZUvJpcGHYswQlQsHyRITQ3aNOoFPi86NFxmOXEIVAGVKPHB87w8ZlMmhssG2vitCuNzuQCeDwPaokQ==
 
+"@types/ember__owner@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/ember__owner/-/ember__owner-4.0.3.tgz#0e85b4ca84bbf8063c24f7eee0ad8d628c20e0aa"
+  integrity sha512-vwVKdLNYKXMOxJXwMnFQh7TkWfkp6berH6Kc/VK8is1bPgaBB7X/c50rjNmM2o7zI5LJSPm1khxcDidfyXnimg==
+
 "@types/ember__polyfills@*", "@types/ember__polyfills@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/ember__polyfills/-/ember__polyfills-4.0.0.tgz#d83ae94ff2890ad47798315426d9916f39ff4ae6"
@@ -4860,7 +4865,7 @@ ember-page-title@^7.0.0:
   dependencies:
     ember-cli-babel "^7.26.6"
 
-ember-qunit@^6.0.0:
+ember-qunit@~6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/ember-qunit/-/ember-qunit-6.0.0.tgz#cea4766c297a25d58a3e886ccd4eb726167ea47c"
   integrity sha512-idNWh9Ap2HN9e3Xozh5Jrciu5tDhn0okM/bgwDjdks3dwuMhEox45iiRTx469FWQ9+ixjZ40AsXsRTDkfCmvmw==
