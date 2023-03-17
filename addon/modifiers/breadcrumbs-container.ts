@@ -3,6 +3,7 @@ import type { Container } from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
 import { registerDestructor } from '@ember/destroyable';
 import { inject as service } from '@ember/service';
 import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
+import type Owner from '@ember/owner';
 
 interface BreadcrumbsContainerModifierSignature {
   Element: HTMLUListElement;
@@ -21,7 +22,7 @@ export default class BreadcrumbsContainerModifier extends Modifier<BreadcrumbsCo
   container: Container | null = null;
 
   constructor(
-    owner: unknown,
+    owner: Owner,
     args: ArgsFor<BreadcrumbsContainerModifierSignature>
   ) {
     super(owner, args);
