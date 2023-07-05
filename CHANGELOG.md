@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v4.0.0...v4.1.0) (2023-07-05)
+
+
+### Features
+
+* add support for `ember-modifier` v4 ([2b85c8b](https://github.com/Bagaar/ember-breadcrumbs/commit/2b85c8bc62885f65f1490240012601b7195f2eb5))
+
 ## [4.0.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v3.0.0...v4.0.0) (2022-10-21)
 
 
