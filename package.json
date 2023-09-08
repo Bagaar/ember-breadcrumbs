@@ -1,109 +1,31 @@
 {
-  "name": "@bagaar/ember-breadcrumbs",
+  "name": "workspace-root",
   "version": "4.1.0",
-  "description": "Template based breadcrumb management for Ember applications.",
-  "keywords": [
-    "bagaar",
-    "breadcrumbs",
-    "ember",
-    "ember-addon"
-  ],
-  "repository": "https://github.com/Bagaar/ember-breadcrumbs",
+  "private": true,
+  "repository": "",
   "license": "MIT",
-  "author": "Bagaar",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
+  "author": "",
+  "workspaces": [
+    "ember-breadcrumbs",
+    "test-app"
+  ],
   "scripts": {
-    "build": "ember build --environment=production",
-    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
-    "lint:css": "stylelint \"**/*.css\"",
-    "lint:css:fix": "concurrently \"npm:lint:css -- --fix\"",
-    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
-    "lint:hbs": "ember-template-lint .",
-    "lint:hbs:fix": "ember-template-lint . --fix",
-    "lint:js": "eslint . --cache",
-    "lint:js:fix": "eslint . --fix",
-    "lint:types": "glint",
-    "prepack": "ember ts:precompile",
-    "postpack": "ember ts:clean",
+    "build": "yarn workspace @bagaar/ember-breadcrumbs run build",
+    "build:js": "yarn workspace @bagaar/ember-breadcrumbs run build:js",
+    "build:types": "yarn workspace @bagaar/ember-breadcrumbs run build:types",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
     "prepare": "husky install",
-    "start": "ember serve",
-    "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
-    "test:ember": "ember test",
-    "test:ember-compatibility": "ember try:each",
-    "release": "standard-version"
-  },
-  "dependencies": {
-    "@glimmer/component": "^1.1.2",
-    "@glimmer/tracking": "^1.1.2",
-    "ember-auto-import": "^2.6.3",
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.2.0",
-    "ember-cli-typescript": "^5.2.1",
-    "ember-modifier": "^3.2.7 || ^4.0.0"
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "yarn workspace @bagaar/ember-breadcrumbs run start",
+    "start:test-app": "yarn workspace test-app run start",
+    "test": "yarn workspace test-app run test"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.6",
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
-    "@ember/optional-features": "^2.0.0",
-    "@ember/string": "^3.1.1",
-    "@ember/test-helpers": "^3.2.0",
-    "@embroider/test-setup": "^3.0.1",
-    "@glint/core": "1.0.2",
-    "@glint/environment-ember-loose": "1.0.2",
-    "@glint/template": "1.0.2",
-    "@tsconfig/ember": "^3.0.0",
-    "@types/qunit": "^2.19.6",
-    "@types/rsvp": "^4.0.4",
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
-    "@typescript-eslint/parser": "^5.60.1",
-    "broccoli-asset-rev": "^3.0.0",
-    "concurrently": "^8.2.0",
-    "ember-cli": "~5.1.0",
-    "ember-cli-clean-css": "^2.0.0",
-    "ember-cli-dependency-checker": "^3.3.2",
-    "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-sri": "^2.1.1",
-    "ember-cli-terser": "^4.0.2",
-    "ember-load-initializers": "^2.1.2",
-    "ember-page-title": "^7.0.0",
-    "ember-qunit": "~7.0.0",
-    "ember-resolver": "^10.1.1",
-    "ember-source": "~5.1.1",
-    "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^5.11.0",
-    "ember-try": "^2.0.0",
-    "eslint": "^8.43.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-ember": "^11.9.0",
-    "eslint-plugin-n": "^16.0.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-qunit": "^8.0.0",
+    "concurrently": "^8.2.1",
     "husky": "^8.0.3",
-    "loader.js": "^4.7.0",
-    "prettier": "^2.8.8",
-    "qunit": "^2.19.4",
-    "qunit-dom": "^2.0.0",
-    "standard-version": "^9.5.0",
-    "stylelint": "^15.9.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-prettier": "^3.0.0",
-    "typescript": "^5.1.6",
-    "webpack": "^5.88.1"
-  },
-  "peerDependencies": {
-    "ember-source": "^4.8.0 || ^5.0.0"
-  },
-  "engines": {
-    "node": "16.* || >= 18"
-  },
-  "ember": {
-    "edition": "octane"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "standard-version": "^9.5.0"
   }
 }

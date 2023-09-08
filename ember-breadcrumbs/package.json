@@ -1,0 +1,104 @@
+{
+  "name": "@bagaar/ember-breadcrumbs",
+  "version": "4.1.0",
+  "description": "Template based breadcrumb management for Ember applications.",
+  "keywords": [
+    "bagaar",
+    "breadcrumbs",
+    "ember",
+    "ember-addon"
+  ],
+  "repository": "https://github.com/Bagaar/ember-breadcrumbs",
+  "license": "MIT",
+  "author": "Bagaar",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "concurrently \"npm:build:*\" --names \"build:\"",
+    "build:js": "rollup --config",
+    "build:types": "glint --declaration",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "postpack": "ember ts:clean",
+    "prepack": "yarn build",
+    "release": "standard-version",
+    "start": "concurrently \"npm:start:*\" --names \"start:\"",
+    "start:js": "rollup --config --watch --no-watch.clearScreen",
+    "start:types": "glint --declaration --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.6",
+    "@embroider/addon-dev": "^4.1.0",
+    "@glimmer/component": "^1.1.2",
+    "@glimmer/tracking": "^1.1.2",
+    "ember-modifier": "^3.2.7 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.6",
+    "@babel/plugin-proposal-decorators": "^7.22.10",
+    "@babel/plugin-transform-class-properties": "^7.22.5",
+    "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.11",
+    "@babel/runtime": "^7.22.11",
+    "@glint/core": "1.0.2",
+    "@glint/template": "1.0.2",
+    "@glint/environment-ember-loose": "1.0.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "concurrently": "^8.2.1",
+    "ember-source": "~5.1.2",
+    "eslint-plugin-n": "^16.0.1",
+    "rollup": "^3.28.1",
+    "rollup-plugin-copy": "^3.4.0"
+  },
+  "peerDependencies": {
+    "ember-source": "^4.8.0 || ^5.1.1"
+  },
+  "engines": {
+    "node": "16.* || >= 18"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "app-js": {
+      "./components/breadcrumbs-container.js": "./dist/_app_/components/breadcrumbs-container.js",
+      "./components/breadcrumbs-item.js": "./dist/_app_/components/breadcrumbs-item.js",
+      "./modifiers/breadcrumbs-container.js": "./dist/_app_/modifiers/breadcrumbs-container.js",
+      "./services/breadcrumbs.js": "./dist/_app_/services/breadcrumbs.js"
+    },
+    "main": "addon-main.cjs",
+    "type": "addon",
+    "version": 2
+  },
+  "exports": {
+    ".": {
+      "types": "./declarations/glint.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "files": [
+    "addon-main.cjs",
+    "declarations",
+    "dist"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "declarations/*"
+      ]
+    }
+  }
+}

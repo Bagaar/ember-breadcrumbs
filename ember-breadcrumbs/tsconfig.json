@@ -1,0 +1,24 @@
+{
+  "extends": "@tsconfig/ember/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "declarations",
+    "moduleResolution": "node",
+    "paths": {
+      "@bagaar/ember-breadcrumbs": [
+        "src"
+      ],
+      "@bagaar/ember-breadcrumbs/*": [
+        "src/*"
+      ],
+    }
+  },
+  "glint": {
+    "environment": "ember-loose"
+  },
+  "include": [
+    "src/**/*",
+    "unpublished-development-types/**/*"
+  ]
+}
