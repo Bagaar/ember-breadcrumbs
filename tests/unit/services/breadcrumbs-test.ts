@@ -8,7 +8,7 @@ module('Unit | Service | breadcrumbs', function (hooks) {
 
   test('it registers/unregisters breadcrumb containers', function (assert) {
     const breadcrumbsService = this.owner.lookup(
-      'service:breadcrumbs'
+      'service:breadcrumbs',
     ) as BreadcrumbsService;
 
     const container = getDummyContainer();
@@ -22,7 +22,7 @@ module('Unit | Service | breadcrumbs', function (hooks) {
 
   test('it throws when registering the same breadcrumb container twice', function (assert) {
     const breadcrumbsService = this.owner.lookup(
-      'service:breadcrumbs'
+      'service:breadcrumbs',
     ) as BreadcrumbsService;
 
     const container = getDummyContainer();
