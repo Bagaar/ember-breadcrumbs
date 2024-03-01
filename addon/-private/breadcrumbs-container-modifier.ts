@@ -1,9 +1,9 @@
-import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
-import type { Container } from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
+import BreadcrumbsService, {
+  type Container,
+} from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
 import { registerDestructor } from '@ember/destroyable';
 import { inject as service } from '@ember/service';
-import Modifier, { ArgsFor, NamedArgs, PositionalArgs } from 'ember-modifier';
-import type Owner from '@ember/owner';
+import Modifier, { type NamedArgs, type PositionalArgs } from 'ember-modifier';
 
 interface BreadcrumbsContainerModifierSignature {
   Element: HTMLUListElement;
@@ -12,7 +12,6 @@ interface BreadcrumbsContainerModifierSignature {
       itemClass?: string;
       linkClass?: string;
     };
-    Positional: [];
   };
 }
 
@@ -21,27 +20,20 @@ export default class BreadcrumbsContainerModifier extends Modifier<BreadcrumbsCo
 
   container: Container | null = null;
 
-  constructor(
-    owner: Owner,
-    args: ArgsFor<BreadcrumbsContainerModifierSignature>
-  ) {
-    super(owner, args);
-
-    registerDestructor(this, unregisterContainer);
-  }
-
   modify(
-    element: HTMLUListElement,
-    _positional: PositionalArgs<BreadcrumbsContainerModifierSignature>,
+    element: BreadcrumbsContainerModifierSignature['Element'],
+    positional: PositionalArgs<BreadcrumbsContainerModifierSignature>,
     { itemClass, linkClass }: NamedArgs<BreadcrumbsContainerModifierSignature>
   ) {
-    this.container = {
-      element,
-      itemClass,
-      linkClass,
-    };
+    if (this.container) {
+      return;
+    }
+
+    this.container = { element, itemClass, linkClass };
 
     this.breadcrumbsService.registerContainer(this.container);
+
+    registerDestructor(this, unregisterContainer);
   }
 }
 
