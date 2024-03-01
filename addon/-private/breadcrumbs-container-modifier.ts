@@ -23,7 +23,7 @@ export default class BreadcrumbsContainerModifier extends Modifier<BreadcrumbsCo
   modify(
     element: BreadcrumbsContainerModifierSignature['Element'],
     positional: PositionalArgs<BreadcrumbsContainerModifierSignature>,
-    { itemClass, linkClass }: NamedArgs<BreadcrumbsContainerModifierSignature>
+    { itemClass, linkClass }: NamedArgs<BreadcrumbsContainerModifierSignature>,
   ) {
     if (this.container) {
       return;

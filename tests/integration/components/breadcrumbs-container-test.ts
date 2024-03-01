@@ -9,7 +9,7 @@ module('Integration | Component | breadcrumbs-container', function (hooks) {
 
   test('it registers/unregisters', async function (assert) {
     const breadcrumbsService = this.owner.lookup(
-      'service:breadcrumbs'
+      'service:breadcrumbs',
     ) as BreadcrumbsService;
 
     await render(hbs`
