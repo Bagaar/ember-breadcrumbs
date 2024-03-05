@@ -1,0 +1,131 @@
+{
+  "name": "@bagaar/ember-breadcrumbs",
+  "version": "4.1.0",
+  "description": "Template based breadcrumb management for Ember applications.",
+  "keywords": [
+    "breadcrumbs",
+    "ember-addon"
+  ],
+  "repository": "https://github.com/bagaar/ember-breadcrumbs",
+  "license": "MIT",
+  "author": "Bagaar",
+  "exports": {
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "declarations/*"
+      ]
+    }
+  },
+  "files": [
+    "addon-main.cjs",
+    "CHANGELOG.md",
+    "declarations",
+    "dist"
+  ],
+  "scripts": {
+    "build": "concurrently 'npm:build:*'",
+    "build:js": "rollup --config",
+    "build:types": "glint --declaration",
+    "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
+    "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "prepack": "rollup --config",
+    "start": "concurrently 'npm:start:*'",
+    "start:js": "rollup --config --watch --no-watch.clearScreen",
+    "start:types": "glint --declaration --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.7",
+    "decorator-transforms": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/plugin-transform-typescript": "^7.23.6",
+    "@babel/runtime": "^7.17.0",
+    "@embroider/addon-dev": "^4.1.0",
+    "@glimmer/component": "^1.1.2",
+    "@glimmer/tracking": "^1.1.2",
+    "@glint/core": "^1.2.1",
+    "@glint/environment-ember-loose": "^1.2.1",
+    "@glint/environment-ember-template-imports": "^1.2.1",
+    "@glint/template": "^1.2.1",
+    "@release-it-plugins/lerna-changelog": "^6.0.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@tsconfig/ember": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "babel-plugin-ember-template-compilation": "^2.2.1",
+    "concurrently": "^8.2.2",
+    "ember-modifier": "^4.1.0",
+    "ember-source": "~5.6.0",
+    "ember-template-lint": "^5.13.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-ember": "^11.12.0",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "release-it": "^17.0.3",
+    "rollup": "^4.9.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@glimmer/component": ">= 1.1.2",
+    "@glimmer/tracking": ">= 1.1.2",
+    "ember-modifier": ">= 4.0.0",
+    "ember-source": ">= 4.8.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs",
+    "app-js": {
+      "./components/breadcrumbs-container.js": "./dist/_app_/components/breadcrumbs-container.js",
+      "./components/breadcrumbs-item.js": "./dist/_app_/components/breadcrumbs-item.js",
+      "./services/breadcrumbs.js": "./dist/_app_/services/breadcrumbs.js"
+    }
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it-plugins/lerna-changelog": {
+        "infile": "../CHANGELOG.md",
+        "launchEditor": false
+      }
+    },
+    "git": {
+      "commitMessage": "Release v${version}",
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_TOKEN"
+    }
+  },
+  "volta": {
+    "extends": "../package.json"
+  }
+}
