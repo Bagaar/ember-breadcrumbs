@@ -11,9 +11,6 @@ concurrency:
   group: ci-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
-env:
-  NODE_VERSION: 18
-
 jobs:
   test:
     name: "Tests"
@@ -21,18 +18,20 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: ${{env.NODE_VERSION}}
-          cache: yarn
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
       - name: Run Tests
-        run: yarn test:ember
+        run: pnpm test
 
   floating:
     name: "Floating Dependencies"
@@ -40,20 +39,23 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: ${{env.NODE_VERSION}}
-          cache: yarn
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
       - name: Install Dependencies
-        run: yarn install --no-lockfile
+        run: pnpm install --no-lockfile
       - name: Run Tests
-        run: yarn test:ember
+        run: pnpm test
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
     runs-on: ubuntu-latest
-    needs: "test"
+    needs: 'test'
     timeout-minutes: 10
 
     strategy:
@@ -62,21 +64,24 @@ jobs:
         try-scenario:
           - ember-lts-4.8
           - ember-lts-4.12
+          - ember-lts-5.4
           - ember-release
           - ember-beta
           - ember-canary
           - embroider-safe
           - embroider-optimized
-          - ember-modifier-3
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: ${{env.NODE_VERSION}}
-          cache: yarn
+          version: 8
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Run Tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
+        working-directory: test-app
