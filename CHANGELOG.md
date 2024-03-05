@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+## v5.0.0 (2024-03-05)
+
+#### :boom: Breaking Change
+* [#99](https://github.com/Bagaar/ember-breadcrumbs/pull/99) Convert to v2 addon ([@bertdeblock](https://github.com/bertdeblock))
+
+#### :rocket: Enhancement
+* [#97](https://github.com/Bagaar/ember-breadcrumbs/pull/97) Provide an extendable template registry ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 1
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+
 ## [4.1.0](https://github.com/Bagaar/ember-breadcrumbs/compare/v4.0.0...v4.1.0) (2023-07-05)
 
 

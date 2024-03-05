@@ -1,6 +1,6 @@
 {
   "name": "@bagaar/ember-breadcrumbs",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Template based breadcrumb management for Ember applications.",
   "keywords": [
     "breadcrumbs",
