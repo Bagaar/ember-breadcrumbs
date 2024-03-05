@@ -1,6 +1,6 @@
 // components
-import type BreadcrumbsContainer from './components/breadcrumbs-container.ts';
-import type BreadcrumbsItem from './components/breadcrumbs-item.ts';
+import type BreadcrumbsContainer from './components/breadcrumbs-container.gts';
+import type BreadcrumbsItem from './components/breadcrumbs-item.gts';
 
 export default interface BagaarEmberBreadcrumbsRegistry {
   // components
