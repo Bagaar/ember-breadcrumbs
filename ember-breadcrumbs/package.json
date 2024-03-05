@@ -110,19 +110,20 @@
     }
   },
   "release-it": {
-    "plugins": {
-      "@release-it-plugins/lerna-changelog": {
-        "infile": "../CHANGELOG.md",
-        "launchEditor": false
-      }
-    },
     "git": {
       "commitMessage": "Release v${version}",
       "tagName": "v${version}"
     },
     "github": {
-      "release": true,
-      "tokenRef": "GITHUB_TOKEN"
+      "release": true
+    },
+    "hooks": {
+      "before:git:release": "git add ../"
+    },
+    "plugins": {
+      "@release-it-plugins/lerna-changelog": {
+        "infile": "../CHANGELOG.md"
+      }
     }
   },
   "volta": {
