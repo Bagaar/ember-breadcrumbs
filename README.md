@@ -22,7 +22,15 @@ Template based breadcrumb management for Ember applications.
 ## Installation
 
 ```shell
-ember install @bagaar/ember-breadcrumbs
+npm install -D @bagaar/ember-breadcrumbs
+```
+
+```shell
+pnpm add -D @bagaar/ember-breadcrumbs
+```
+
+```shell
+yarn add -D @bagaar/ember-breadcrumbs
 ```
 
 ## Usage
@@ -147,8 +155,8 @@ export default class EngineName extends Engine {
 
 ## Contributing
 
-See the [Contributing](./CONTRIBUTING.md) guide for details.
+See the [Contributing](CONTRIBUTING.md) guide for details.
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE.md).
+This project is licensed under the [MIT License](LICENSE.md).
