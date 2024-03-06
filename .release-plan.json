@@ -1,0 +1,17 @@
+{
+  "solution": {
+    "@bagaar/ember-breadcrumbs": {
+      "impact": "patch",
+      "oldVersion": "5.0.0",
+      "newVersion": "5.0.1",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./ember-breadcrumbs/package.json"
+    }
+  },
+  "description": "## Release (2024-03-06)\n\n@bagaar/ember-breadcrumbs 5.0.1 (patch)\n\n#### :house: Internal\n* `@bagaar/ember-breadcrumbs`\n  * [#101](https://github.com/Bagaar/ember-breadcrumbs/pull/101) Set up Release Plan ([@bertdeblock](https://github.com/bertdeblock))\n\n#### Committers: 1\n- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))\n"
+}
