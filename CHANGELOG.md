@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-03-06)
+
+@bagaar/ember-breadcrumbs 5.0.1 (patch)
+
+#### :house: Internal
+* `@bagaar/ember-breadcrumbs`
+  * [#101](https://github.com/Bagaar/ember-breadcrumbs/pull/101) Set up Release Plan ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 1
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
