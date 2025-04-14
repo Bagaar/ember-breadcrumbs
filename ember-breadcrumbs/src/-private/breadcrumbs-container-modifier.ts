@@ -1,5 +1,5 @@
 import { registerDestructor } from '@ember/destroyable';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import Modifier, { type NamedArgs, type PositionalArgs } from 'ember-modifier';
 import BreadcrumbsService, { type Container } from '../services/breadcrumbs.ts';
 
