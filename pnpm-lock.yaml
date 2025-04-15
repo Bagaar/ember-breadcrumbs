@@ -21,7 +21,7 @@ importers:
         specifier: ^2.0.2
         version: 2.0.5(prettier@3.5.3)
       release-plan:
-        specifier: 0.16.0
+        specifier: ^0.16.0
         version: 0.16.0
 
   ember-breadcrumbs:
