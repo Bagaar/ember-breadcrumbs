@@ -21,8 +21,10 @@
     "prettier-plugin-ember-template-tag": "^1.1.0",
     "release-plan": "^0.8.0"
   },
+  "packageManager": "pnpm@10.8.1",
   "volta": {
-    "node": "18.19.1"
+    "node": "18.19.1",
+    "pnpm": "10.8.1"
   },
   "pnpm": {
     "overrides": {
