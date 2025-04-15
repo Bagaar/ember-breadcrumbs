@@ -1,15 +1,12 @@
-import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
 import type { Container } from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
-import { setupTest } from 'test-app/tests/helpers';
 import { module, test } from 'qunit';
+import { setupTest } from 'test-app/tests/helpers';
 
 module('Unit | Service | breadcrumbs', function (hooks) {
   setupTest(hooks);
 
   test('it registers/unregisters breadcrumb containers', function (assert) {
-    const breadcrumbsService = this.owner.lookup(
-      'service:breadcrumbs',
-    ) as BreadcrumbsService;
+    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
 
     const container = getDummyContainer();
 
@@ -21,9 +18,7 @@ module('Unit | Service | breadcrumbs', function (hooks) {
   });
 
   test('it throws when registering the same breadcrumb container twice', function (assert) {
-    const breadcrumbsService = this.owner.lookup(
-      'service:breadcrumbs',
-    ) as BreadcrumbsService;
+    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
 
     const container = getDummyContainer();
 

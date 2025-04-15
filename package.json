@@ -5,10 +5,11 @@
   "author": "Bagaar",
   "scripts": {
     "build": "pnpm --filter ember-breadcrumbs build",
+    "format": "pnpm --filter '*' format",
     "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
     "prepare": "pnpm build",
-    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefixColors auto",
     "start:addon": "pnpm --filter ember-breadcrumbs start --no-watch.clearScreen",
     "start:test-app": "pnpm --filter test-app start",
     "test": "pnpm --filter '*' test",
@@ -16,19 +17,14 @@
   },
   "devDependencies": {
     "@glint/core": "^1.2.1",
-    "concurrently": "^8.2.0",
+    "concurrently": "^9.1.2",
     "prettier": "^3.0.3",
-    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "prettier-plugin-ember-template-tag": "^2.0.2",
     "release-plan": "^0.8.0"
   },
   "packageManager": "pnpm@10.8.1",
   "volta": {
     "node": "22.14.0",
     "pnpm": "10.8.1"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/eslint": "^7.0.0"
-    }
   }
 }

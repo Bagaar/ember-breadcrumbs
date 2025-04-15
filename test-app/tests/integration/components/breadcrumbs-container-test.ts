@@ -1,16 +1,13 @@
-import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
 import { render } from '@ember/test-helpers';
-import { setupRenderingTest } from 'test-app/tests/helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
+import { setupRenderingTest } from 'test-app/tests/helpers';
 
 module('Integration | Component | breadcrumbs-container', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it registers/unregisters', async function (assert) {
-    const breadcrumbsService = this.owner.lookup(
-      'service:breadcrumbs',
-    ) as BreadcrumbsService;
+    const breadcrumbsService = this.owner.lookup('service:breadcrumbs');
 
     await render(hbs`
       <BreadcrumbsContainer />
