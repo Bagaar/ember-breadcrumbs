@@ -1,0 +1,22 @@
+{
+  "solution": {
+    "@bagaar/ember-breadcrumbs": {
+      "impact": "minor",
+      "oldVersion": "5.0.0",
+      "newVersion": "5.1.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./ember-breadcrumbs/package.json"
+    }
+  },
+  "description": "## Release (2025-04-16)\n\n* @bagaar/ember-breadcrumbs 5.1.0 (minor)\n\n#### :rocket: Enhancement\n* `@bagaar/ember-breadcrumbs`\n  * [#107](https://github.com/Bagaar/ember-breadcrumbs/pull/107) Update to the latest versions and addon blueprint ([@gvdp](https://github.com/gvdp))\n\n#### :bug: Bug Fix\n* [#106](https://github.com/Bagaar/ember-breadcrumbs/pull/106) Replace `inject` with `service` ([@Windvis](https://github.com/Windvis))\n\n#### :house: Internal\n* Other\n  * [#109](https://github.com/Bagaar/ember-breadcrumbs/pull/109) Update release plan boilerplate ([@gvdp](https://github.com/gvdp))\n  * [#100](https://github.com/Bagaar/ember-breadcrumbs/pull/100) Use template imports ([@bertdeblock](https://github.com/bertdeblock))\n  * [#101](https://github.com/Bagaar/ember-breadcrumbs/pull/101) Set up Release Plan ([@bertdeblock](https://github.com/bertdeblock))\n* `@bagaar/ember-breadcrumbs`\n  * [#107](https://github.com/Bagaar/ember-breadcrumbs/pull/107) Update to the latest versions and addon blueprint ([@gvdp](https://github.com/gvdp))\n\n#### Committers: 3\n- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))\n- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))\n- [@gvdp](https://github.com/gvdp)\n"
+}
