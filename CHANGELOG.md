@@ -1,5 +1,29 @@
 # Changelog
 
+## Release (2025-04-16)
+
+* @bagaar/ember-breadcrumbs 5.1.0 (minor)
+
+#### :rocket: Enhancement
+* `@bagaar/ember-breadcrumbs`
+  * [#107](https://github.com/Bagaar/ember-breadcrumbs/pull/107) Update to the latest versions and addon blueprint ([@gvdp](https://github.com/gvdp))
+
+#### :bug: Bug Fix
+* [#106](https://github.com/Bagaar/ember-breadcrumbs/pull/106) Replace `inject` with `service` ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* Other
+  * [#109](https://github.com/Bagaar/ember-breadcrumbs/pull/109) Update release plan boilerplate ([@gvdp](https://github.com/gvdp))
+  * [#100](https://github.com/Bagaar/ember-breadcrumbs/pull/100) Use template imports ([@bertdeblock](https://github.com/bertdeblock))
+  * [#101](https://github.com/Bagaar/ember-breadcrumbs/pull/101) Set up Release Plan ([@bertdeblock](https://github.com/bertdeblock))
+* `@bagaar/ember-breadcrumbs`
+  * [#107](https://github.com/Bagaar/ember-breadcrumbs/pull/107) Update to the latest versions and addon blueprint ([@gvdp](https://github.com/gvdp))
+
+#### Committers: 3
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+- [@gvdp](https://github.com/gvdp)
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
