@@ -5,18 +5,9 @@
 
 Template based breadcrumb management for Ember applications.
 
-## Table of Contents
-
-- [Compatibility](#compatibility)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Usage Inside an Engine](#usage-inside-an-engine)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Compatibility
 
-- Ember.js v4.8 or above
+- Ember.js v5.8 or above
 - Embroider or ember-auto-import v2
 
 ## Installation
@@ -34,6 +25,63 @@ yarn add -D @bagaar/ember-breadcrumbs
 ```
 
 ## Usage
+
+### Registering the `breadcrumbs` Service
+
+Classic apps don't have to do anything: the `breadcrumbs` service is re-exported into the
+app tree automatically.
+
+Apps using a strict resolver have to register the service themselves, because there is no
+app-tree re-export to resolve it for them:
+
+```js
+// app/app.js
+
+import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
+
+export default class App extends Application {
+  modules = {
+    './services/breadcrumbs': BreadcrumbsService,
+    // ...
+  };
+}
+```
+
+See [`demo-app/app.gts`](demo-app/app.gts) for a working example.
+
+### Strict mode example (GJS)
+
+If you are using strict mode templates, import the components and use them directly in your template block. The same pattern applies to GTS files.
+
+```gjs
+// app/components/breadcrumbs-demo.gjs
+
+import Component from '@glimmer/component';
+import { LinkTo } from '@ember/routing';
+import { BreadcrumbsContainer, BreadcrumbsItem } from '@bagaar/ember-breadcrumbs/components';
+
+export default class BreadcrumbsDemo extends Component {
+  <template>
+    <BreadcrumbsContainer
+      @itemClass="breadcrumbs__item"
+      @linkClass="breadcrumbs__link"
+      class="breadcrumbs"
+    />
+
+    <BreadcrumbsItem as |linkClass|>
+      <LinkTo @route="foo" class={{linkClass}}>
+        Foo
+      </LinkTo>
+    </BreadcrumbsItem>
+
+    <BreadcrumbsItem as |linkClass|>
+      <LinkTo @route="foo.bar" class={{linkClass}}>
+        Bar
+      </LinkTo>
+    </BreadcrumbsItem>
+  </template>
+}
+```
 
 ### 1\. Defining Where You Want the Breadcrumbs to Be Rendered
 
