@@ -1,0 +1,210 @@
+# @bagaar/ember-breadcrumbs
+
+[![CI](https://github.com/bagaar/ember-breadcrumbs/workflows/CI/badge.svg)](https://github.com/bagaar/ember-breadcrumbs/actions?query=workflow%3ACI)
+[![NPM Version](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs.svg)](https://badge.fury.io/js/%40bagaar%2Fember-breadcrumbs)
+
+Template based breadcrumb management for Ember applications.
+
+## Compatibility
+
+- Ember.js v5.8 or above
+- Embroider or ember-auto-import v2
+
+## Installation
+
+```shell
+npm install -D @bagaar/ember-breadcrumbs
+```
+
+```shell
+pnpm add -D @bagaar/ember-breadcrumbs
+```
+
+```shell
+yarn add -D @bagaar/ember-breadcrumbs
+```
+
+## Usage
+
+### Registering the `breadcrumbs` Service
+
+Classic apps don't have to do anything: the `breadcrumbs` service is re-exported into the
+app tree automatically.
+
+Apps using a strict resolver have to register the service themselves, because there is no
+app-tree re-export to resolve it for them:
+
+```js
+// app/app.js
+
+import BreadcrumbsService from '@bagaar/ember-breadcrumbs/services/breadcrumbs';
+
+export default class App extends Application {
+  modules = {
+    './services/breadcrumbs': BreadcrumbsService,
+    // ...
+  };
+}
+```
+
+See [`demo-app/app.gts`](demo-app/app.gts) for a working example.
+
+### Strict mode example (GJS)
+
+If you are using strict mode templates, import the components and use them directly in your template block. The same pattern applies to GTS files.
+
+```gjs
+// app/components/breadcrumbs-demo.gjs
+
+import Component from '@glimmer/component';
+import { LinkTo } from '@ember/routing';
+import { BreadcrumbsContainer, BreadcrumbsItem } from '@bagaar/ember-breadcrumbs/components';
+
+export default class BreadcrumbsDemo extends Component {
+  <template>
+    <BreadcrumbsContainer
+      @itemClass="breadcrumbs__item"
+      @linkClass="breadcrumbs__link"
+      class="breadcrumbs"
+    />
+
+    <BreadcrumbsItem as |linkClass|>
+      <LinkTo @route="foo" class={{linkClass}}>
+        Foo
+      </LinkTo>
+    </BreadcrumbsItem>
+
+    <BreadcrumbsItem as |linkClass|>
+      <LinkTo @route="foo.bar" class={{linkClass}}>
+        Bar
+      </LinkTo>
+    </BreadcrumbsItem>
+  </template>
+}
+```
+
+### 1\. Defining Where You Want the Breadcrumbs to Be Rendered
+
+```handlebars
+{{! app/templates/application.hbs }}
+
+<BreadcrumbsContainer
+  @itemClass="breadcrumbs__item"
+  @linkClass="breadcrumbs__link"
+  class="breadcrumbs"
+/>
+```
+
+> **NOTE:** It's also possible to render multiple instances of the `<BreadcrumbsContainer />` component.
+
+### 2\. Leaving Behind Breadcrumbs
+
+```handlebars
+{{! app/templates/foo.hbs }}
+
+<BreadcrumbsItem as |linkClass|>
+  <LinkTo @route="foo" class={{linkClass}}>
+    Foo
+  </LinkTo>
+</BreadcrumbsItem>
+```
+
+```handlebars
+{{! app/templates/foo/bar.hbs }}
+
+<BreadcrumbsItem as |linkClass|>
+  <LinkTo @route="foo.bar" class={{linkClass}}>
+    Bar
+  </LinkTo>
+</BreadcrumbsItem>
+```
+
+> **NOTE:** The `<BreadcrumbsItem />` component is responsible for rendering the provided `<LinkTo />` component into all instances of the `<BreadcrumbsContainer />` component using Ember's `{{in-element}}` helper.
+
+#### Advantages
+
+Leaving behind breadcrumbs like this might seem very verbose, but it's actually pretty flexible and has some advantages:
+
+1. Because you leave behind breadcrumbs inside templates, the addon doesn't have to take async model hooks into account
+2. Because you use Ember's `<LinkTo />` component to define breadcrumb links, you have complete control over:
+   - **how you define them** (inline vs. block)
+   - **how they should work** (route, dynamic segments, query parameters, ...)
+   - **how they should look like** (text, icons, additional CSS class names, ...)
+
+#### Rendered Output
+
+The rendered output will be:
+
+```html
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item">
+    <a class="breadcrumbs__link" href="/foo">Foo</a>
+  </li>
+  <li class="breadcrumbs__item">
+    <a class="breadcrumbs__link" href="/foo/bar">Bar</a>
+  </li>
+</ul>
+```
+
+### 3\. Styling the Breadcrumbs
+
+The addon doesn't ship with default styling, this should be done inside the consuming project.
+
+### 4\. `<BreadcrumbsContainer />` arguments
+
+Name          | Description                                                                 | Type
+:-------------| :---------------------------------------------------------------------------| :-----
+**itemClass** | The class that will be added to all `<BreadcrumbsItem />` components        | String
+**linkClass** | The class that will be yielded to the `<BreadcrumbsItem />`'s block content | String
+
+## Usage Inside an Engine
+
+### 1\. Add `@bagaar/ember-breadcrumbs` to Your Engine's `dependencies`
+
+This will make all `@bagaar/ember-breadcrumbs` components available inside the engine.
+
+```json
+{
+  "dependencies": {
+    "@bagaar/ember-breadcrumbs": "*"
+  }
+}
+```
+
+### 2\. Make the `breadcrumbs` Service Available Inside the Engine
+
+This will make sure that the same instance of the `breadcrumbs` service is used inside the engine and inside the host application.
+
+```javascript
+// app/app.js
+
+export default class App extends Application {
+  engines = {
+    'engine-name': {
+      dependencies: {
+        services: ['breadcrumbs'],
+      },
+    },
+  };
+}
+```
+
+```javascript
+// lib/engine-name/addon/engine.js
+
+export default class EngineName extends Engine {
+  dependencies = {
+    services: ['breadcrumbs'],
+  };
+}
+```
+
+**That's it! Now you should be able to leave behind breadcrumbs inside the engine and render them inside the host application.**
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
