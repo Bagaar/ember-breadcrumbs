@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2026-08-20)
+
+* @bagaar/ember-breadcrumbs 6.0.0 (major)
+
+#### :boom: Breaking Change
+* `@bagaar/ember-breadcrumbs`
+  * [#110](https://github.com/Bagaar/ember-breadcrumbs/pull/110) feat: newer addon format and peerDeps clean up ([@aklkv](https://github.com/aklkv))
+    => latest supported Ember version increased to 5.8
+
+#### :house: Internal
+* `@bagaar/ember-breadcrumbs`
+  * [#110](https://github.com/Bagaar/ember-breadcrumbs/pull/110) feat: newer addon format and peerDeps clean up ([@aklkv](https://github.com/aklkv))
+
+#### Committers: 1
+- Alexey Kulakov ([@aklkv](https://github.com/aklkv))
+
 ## Release (2025-04-16)
 
 * @bagaar/ember-breadcrumbs 5.1.0 (minor)
