@@ -14,3 +14,5 @@ config/ember-cli-update.json
 *.yml
 *.md
 *.html
+
+.release-plan.json
