@@ -7,6 +7,7 @@
 #### :boom: Breaking Change
 * `@bagaar/ember-breadcrumbs`
   * [#110](https://github.com/Bagaar/ember-breadcrumbs/pull/110) feat: newer addon format and peerDeps clean up ([@aklkv](https://github.com/aklkv))
+    => latest supported Ember version increased to 5.8
 
 #### :house: Internal
 * `@bagaar/ember-breadcrumbs`
